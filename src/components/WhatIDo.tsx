@@ -87,20 +87,20 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>DATA SCIENCE &amp; ML</h3>
-              <h4>Modeling, NLP, and Computer Vision</h4>
+              <h3>SOFTWARE DEVELOPMENT</h3>
+              <h4>Front-end, tooling, and product-quality delivery</h4>
               <p>
-                I build and deploy ML models that move real metrics—forecasting,
-                NLP, and computer vision from prototype to production.
+                I build user-facing experiences and production-grade software with a
+                strong focus on performance, accessibility, and maintainability.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Python</div>
-                <div className="what-tags">Machine Learning</div>
-                <div className="what-tags">Deep Learning</div>
-                <div className="what-tags">Natural Language Processing</div>
-                <div className="what-tags">Computer Vision</div>
-                <div className="what-tags">AI</div>
+                <div className="what-tags">TypeScript</div>
+                <div className="what-tags">React</div>
+                <div className="what-tags">UI/UX</div>
+                <div className="what-tags">Performance</div>
+                <div className="what-tags">Accessibility</div>
+                <div className="what-tags">Testing</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -124,20 +124,21 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DATA ENGINEERING</h3>
-              <h4>ETL, Databases, and Analytics Delivery</h4>
+              <h3>DATA-DRIVEN INTELLIGENCE</h3>
+              <h4>Pipelines, forecasting, and decision support</h4>
               <p>
-                I engineer dependable ETL and data quality systems—automating reporting
-                and enabling analytics and ML at scale.
+                I turn messy data into reliable pipelines and decision-ready signals—so
+                teams can ship faster and measure what matters.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">Python</div>
                 <div className="what-tags">SQL</div>
-                <div className="what-tags">Data Engineering</div>
                 <div className="what-tags">ETL</div>
-                <div className="what-tags">Data Visualization</div>
-                <div className="what-tags">R</div>
+                <div className="what-tags">Airflow</div>
+                <div className="what-tags">Forecasting</div>
+                <div className="what-tags">Experimentation</div>
+                <div className="what-tags">Analytics</div>
               </div>
               <div className="what-arrow"></div>
             </div>

@@ -1,5 +1,6 @@
 import { MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
+import { socialLinks } from "../data/social";
 
 const Contact = () => {
   return (
@@ -11,7 +12,7 @@ const Contact = () => {
             <h4>Connect</h4>
             <p>
               <a
-                href="https://www.linkedin.com/in/shivam-lalakiya/"
+                href={socialLinks.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 data-cursor="disable"
@@ -20,13 +21,13 @@ const Contact = () => {
               </a>
             </p>
             <p>
-              <a href="mailto:shivamlalakiya151299@gmail.com" data-cursor="disable">
-                Email — shivamlalakiya151299@gmail.com
+              <a href={`mailto:${socialLinks.email}`} data-cursor="disable">
+                Email — {socialLinks.email}
               </a>
             </p>
             <p>
               <a
-                href="/Shivam_Lalakiya_resume.pdf"
+                href={socialLinks.resume}
                 target="_blank"
                 rel="noreferrer"
                 data-cursor="disable"
@@ -36,13 +37,14 @@ const Contact = () => {
             </p>
             <h4>Education</h4>
             <p>
-              M.S. Data Analytics Engineering (GPA 3.8/4.0), Northeastern University
+              M.S. Data Analytics Engineering (GPA 3.8/4.0), Northeastern University, Boston, MA
             </p>
+            <p>B.Tech. Electronics and Communication Engineering (CGPA 8.5/10), SVNIT Surat, Gujarat, India</p>
           </div>
           <div className="contact-box">
             <h4>Social</h4>
             <a
-              href="https://github.com/shivamlalakiya"
+              href={socialLinks.github}
               target="_blank"
               rel="noreferrer"
               data-cursor="disable"
@@ -51,7 +53,7 @@ const Contact = () => {
               GitHub <MdArrowOutward />
             </a>
             <a
-              href="https://www.linkedin.com/in/shivam-lalakiya/"
+              href={socialLinks.linkedin}
               target="_blank"
               rel="noreferrer"
               data-cursor="disable"

@@ -10,6 +10,7 @@ export function setCharTimeline(
     intensity = Math.random();
   }, 200);
   const tl1 = gsap.timeline({
+    defaults: { ease: "power3.out" },
     scrollTrigger: {
       trigger: ".landing-section",
       start: "top top",
@@ -19,6 +20,7 @@ export function setCharTimeline(
     },
   });
   const tl2 = gsap.timeline({
+    defaults: { ease: "power3.out" },
     scrollTrigger: {
       trigger: ".about-section",
       start: "center 55%",
@@ -28,6 +30,7 @@ export function setCharTimeline(
     },
   });
   const tl3 = gsap.timeline({
+    defaults: { ease: "power3.out" },
     scrollTrigger: {
       trigger: ".whatIDO",
       start: "top top",
@@ -74,7 +77,7 @@ export function setCharTimeline(
       tl2
         .to(
           camera.position,
-          { z: 75, y: 8.4, duration: 6, delay: 2, ease: "power3.inOut" },
+          { z: 75, y: 8.4, duration: 6, delay: 2, ease: "power3.out" },
           0
         )
         .to(".about-section", { y: "30%", duration: 6 }, 0)
@@ -121,6 +124,7 @@ export function setCharTimeline(
   } else {
     if (character) {
       const tM2 = gsap.timeline({
+        defaults: { ease: "power3.out" },
         scrollTrigger: {
           trigger: ".what-box-in",
           start: "top 70%",
@@ -134,6 +138,7 @@ export function setCharTimeline(
 
 export function setAllTimeline() {
   const careerTimeline = gsap.timeline({
+    defaults: { ease: "power3.out" },
     scrollTrigger: {
       trigger: ".career-section",
       start: "top 30%",

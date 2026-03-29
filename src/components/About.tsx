@@ -1,4 +1,5 @@
 import "./styles/About.css";
+import { profile } from "../data/profile";
 
 const About = () => {
   return (
@@ -6,10 +7,13 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          I’m Shivam Lalakiya—an impact-focused Data Scientist &amp; Data Analyst at
-          Washington University in St. Louis (M.S. in Data Analytics Engineering,
-          Northeastern). I turn messy data into reliable pipelines, accurate forecasts,
-          and decision-ready insights—shipping work that leaders can trust.
+          I’m {profile.name}—a {profile.headline} based in {profile.location}. I build
+          data-driven intelligence and production-grade software, contribute to open
+          source, and write work like{" "}
+          <span style={{ whiteSpace: "nowrap" }}>
+            “Data-Driven Fundraising Intelligence”
+          </span>
+          .
         </p>
       </div>
     </div>

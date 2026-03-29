@@ -26,7 +26,7 @@ export function initialFX() {
       opacity: 1,
       duration: 1.2,
       filter: "blur(0px)",
-      ease: "power3.inOut",
+      ease: "power3.out",
       y: 0,
       stagger: 0.025,
       delay: 0.3,
@@ -43,7 +43,7 @@ export function initialFX() {
       opacity: 1,
       duration: 1.2,
       filter: "blur(0px)",
-      ease: "power3.inOut",
+      ease: "power3.out",
       y: 0,
       stagger: 0.025,
       delay: 0.3,
@@ -56,7 +56,7 @@ export function initialFX() {
     {
       opacity: 1,
       duration: 1.2,
-      ease: "power1.inOut",
+      ease: "power3.out",
       y: 0,
       delay: 0.8,
     }
@@ -67,7 +67,7 @@ export function initialFX() {
     {
       opacity: 1,
       duration: 1.2,
-      ease: "power1.inOut",
+      ease: "power3.out",
       delay: 0.1,
     }
   );
@@ -91,7 +91,7 @@ function LoopText(Text1: SplitText, Text2: SplitText) {
     {
       opacity: 1,
       duration: 1.2,
-      ease: "power3.inOut",
+      ease: "power3.out",
       y: 0,
       stagger: 0.1,
       delay: delay,
@@ -103,7 +103,7 @@ function LoopText(Text1: SplitText, Text2: SplitText) {
       { y: 80 },
       {
         duration: 1.2,
-        ease: "power3.inOut",
+        ease: "power3.out",
         y: 0,
         stagger: 0.1,
         delay: delay2,
@@ -116,7 +116,7 @@ function LoopText(Text1: SplitText, Text2: SplitText) {
       {
         y: -80,
         duration: 1.2,
-        ease: "power3.inOut",
+        ease: "power3.out",
         stagger: 0.1,
         delay: delay,
       },
@@ -127,7 +127,7 @@ function LoopText(Text1: SplitText, Text2: SplitText) {
       {
         y: -80,
         duration: 1.2,
-        ease: "power3.inOut",
+        ease: "power3.out",
         stagger: 0.1,
         delay: delay2,
       },

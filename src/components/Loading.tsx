@@ -3,6 +3,7 @@ import "./styles/Loading.css";
 import { useLoading } from "../context/LoadingProvider";
 
 import Marquee from "react-fast-marquee";
+import { profile } from "../data/profile";
 
 const Loading = ({ percent }: { percent: number }) => {
   const { setIsLoading } = useLoading();
@@ -46,7 +47,7 @@ const Loading = ({ percent }: { percent: number }) => {
     <>
       <div className="loading-header">
         <a href="/#" className="loader-title" data-cursor="disable">
-          SL
+          {profile.initials}
         </a>
         <div className={`loaderGame ${clicked && "loader-out"}`}>
           <div className="loaderGame-container">
@@ -62,8 +63,8 @@ const Loading = ({ percent }: { percent: number }) => {
       <div className="loading-screen">
         <div className="loading-marquee">
           <Marquee>
-            <span> Data Scientist</span> <span>Data Analyst</span>
-            <span> ML &amp; Forecasting</span> <span>Data Engineering</span>
+            <span> Software Developer</span> <span>Open-Source Contributor</span>
+            <span> Author</span> <span>Data-Driven Intelligence</span>
           </Marquee>
         </div>
         <div
