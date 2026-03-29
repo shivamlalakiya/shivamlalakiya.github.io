@@ -24,7 +24,13 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
     setIsLoading,
     setLoading,
   };
-  useEffect(() => {}, [loading]);
+  useEffect(() => {
+    // Defensive: if the loader is at 99% for too long, don't block the UI.
+    if (!isLoading) return;
+    if (loading < 99) return;
+    const t = window.setTimeout(() => setIsLoading(false), 90000);
+    return () => window.clearTimeout(t);
+  }, [loading, isLoading]);
 
   return (
     <LoadingContext.Provider value={value as LoadingType}>

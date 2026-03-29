@@ -12,6 +12,32 @@
   height: 100%;
   position: relative;
   max-width: var(--cMaxWidth);
+  z-index: 9;
+}
+
+.landing-grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(320px, 520px) minmax(260px, 1fr);
+  align-items: center;
+  column-gap: clamp(18px, 3vw, 48px);
+}
+
+.landing-avatar {
+  position: relative;
+  z-index: 6;
+  pointer-events: none;
+  width: 100%;
+  height: min(92vh, 760px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.character-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .landing-circle1 {
@@ -106,16 +132,15 @@
 }
 
 .character-model {
-  height: 80%;
-  height: 80vh;
-  position: absolute;
-  max-width: 1920px;
-  max-height: 1080px;
-  transform: translateX(-50%);
+  height: 100%;
   width: 100%;
-  left: 50%;
+  position: relative;
+  max-width: 520px;
+  max-height: 760px;
+  transform: none;
+  left: auto;
   z-index: 0;
-  bottom: 50px;
+  bottom: auto;
   pointer-events: inherit;
 }
 
@@ -155,6 +180,8 @@
   position: relative;
   pointer-events: none;
   z-index: 2;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .character-hover {
@@ -169,10 +196,9 @@
 }
 
 .landing-intro {
-  position: absolute;
+  position: relative;
   z-index: 9;
-  top: 12%;
-  left: 0;
+  justify-self: start;
 }
 
 .landing-intro h2 {
@@ -197,12 +223,11 @@
 } */
 
 .landing-info {
-  position: absolute;
-  right: 50%;
-  transform: translateX(50%);
-  bottom: 40px;
-  top: inherit;
+  position: relative;
   z-index: 9;
+  justify-self: end;
+  text-align: left;
+  transform: none;
 }
 
 .landing-info h3 {
@@ -323,52 +348,19 @@ h2.landing-info-h2 {
 }
 
 @media screen and (min-width: 1025px) {
-  .character-model {
-    height: 100vh;
-    bottom: 0;
-    z-index: 11;
-    position: fixed;
-  }
-
   .character-model::after,
   .character-model::before {
     display: none;
   }
 
-  .landing-intro {
-    top: 50%;
-    left: auto;
-    right: 66%;
-    transform: translate(0%, -50%);
-  }
-
-  .landing-info {
-    bottom: auto;
-    top: 51%;
-    z-index: inherit;
-    text-align: left;
-    transform: translate(0%, -50%);
-    right: auto;
-    left: 66%;
+  .landing-grid {
+    grid-template-columns: minmax(340px, 1fr) minmax(380px, 620px) minmax(340px, 1fr);
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .landing-intro {
-    top: 50%;
-    left: auto;
-    right: 70%;
-    transform: translate(0%, -50%);
-  }
-
-  .landing-info {
-    bottom: auto;
-    top: 51%;
-    z-index: inherit;
-    text-align: left;
-    transform: translate(0%, -50%);
-    right: auto;
-    left: 70%;
+  .landing-grid {
+    grid-template-columns: minmax(380px, 1fr) minmax(420px, 680px) minmax(380px, 1fr);
   }
 }
 

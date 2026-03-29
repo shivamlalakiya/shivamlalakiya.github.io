@@ -106,10 +106,12 @@ export const setProgress = (setLoading: (value: number) => void) => {
       interval = setInterval(() => {
         percent = percent + Math.round(Math.random());
         setLoading(percent);
-        if (percent > 91) {
+        // Don't stall at ~92% if the asset load takes longer.
+        // This keeps the loader moving until the real load completes.
+        if (percent >= 99) {
           clearInterval(interval);
         }
-      }, 2000);
+      }, 300);
     }
   }, 100);
 
