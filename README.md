@@ -2,7 +2,7 @@
 
 This repository contains the source code for my personal portfolio built with React, TypeScript, Three.js, React Three Fiber, and GSAP.
 
-Live site: `https://shivamlalakiya.github.io/`
+Live site: [https://shivamlalakiya.github.io/](https://shivamlalakiya.github.io/)
 
 ![Portfolio Preview](public/images/preview1.png)
 
