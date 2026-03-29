@@ -12,9 +12,9 @@ const projects = [
     image: reactLogo,
     link: "https://github.com/shivamlalakiya/Duplicate_Questions_Quora",
     highlights: [
-      "Built an NLP model to predict duplicate question pairs with ~90% accuracy on 400K question pairs.",
-      "Performed EDA + preprocessing and fine-tuned Word2Vec/LSTM hyperparameters via extensive experiments.",
-      "Deployed a scalable web app using AWS Elastic Beanstalk + Docker and improved interpretability with SHAP/LIME.",
+      "Trained Word2Vec + LSTM model to detect duplicate questions (~90% accuracy on 400K pairs).",
+      "Ran EDA, preprocessing, and hyperparameter tuning to improve generalization.",
+      "Deployed via AWS Elastic Beanstalk + Docker; added SHAP/LIME for interpretability.",
     ],
   },
   {
@@ -24,9 +24,9 @@ const projects = [
     image: reactLogo,
     link: "https://github.com/shivamlalakiya/stock-time-series-and-sentiment-analysis",
     highlights: [
-      "Fetched recent WSJ data and historical prices from Tiingo API and persisted to CSV.",
-      "Built sentiment classifier (Naive Bayes) and an LSTM model to predict trends/future prices (90%+ accuracy).",
-      "Shipped an interactive Streamlit UI to explore insights for listed stocks.",
+      "Ingested WSJ + Tiingo price history and built a clean modeling dataset.",
+      "Built sentiment (Naive Bayes) + price forecasting (LSTM) with 90%+ accuracy.",
+      "Shipped a Streamlit app for interactive exploration.",
     ],
   },
   {
@@ -36,9 +36,9 @@ const projects = [
     image: reactLogo,
     link: "https://github.com/shivamlalakiya",
     highlights: [
-      "Optimized MySQL-to-Snowflake transfer using Kafka, cutting transfer time by 50% and increasing throughput by 30%.",
-      "Tuned Snowflake sink connector to improve transformation/validation speed by 40% and reduce processing errors by 20%.",
-      "Designed validation/testing frameworks, reducing processing errors by 60% and improving accuracy to 99.5%+.",
+      "Cut MySQL → Snowflake transfer time by 50% using Kafka; improved throughput by 30%.",
+      "Optimized sink connector; improved transform/validation speed by 40% and reduced errors by 20%.",
+      "Added validation/testing; reduced pipeline errors by 60% and improved accuracy to 99.5%+.",
     ],
   },
   {
@@ -48,9 +48,9 @@ const projects = [
     image: reactLogo,
     link: "https://github.com/shivamlalakiya/Flight-booking.com",
     highlights: [
-      "Built a flight booking app consuming live SkyScanner API data with React + Node controllers and MongoDB persistence.",
-      "Implemented User/Admin/Airline modules with REST APIs and CRUD for flights, users, airlines, and deals.",
-      "Deployed frontend to Netlify and backend to Heroku; dockerized for repeatable environments and CI/CD.",
+      "Built a flight booking app with live SkyScanner data (React + Node + MongoDB).",
+      "Shipped User/Admin/Airline modules with REST APIs and CRUD workflows.",
+      "Deployed to Netlify/Heroku and dockerized for repeatable CI/CD.",
     ],
   },
   {
@@ -60,9 +60,9 @@ const projects = [
     image: reactLogo,
     link: "https://github.com/shivamlalakiya/Data_Analysis",
     highlights: [
-      "Performed clustering, probabilistic analysis, and text mining across university rankings, crimes in India, and e-commerce datasets.",
-      "Identified key drivers behind top-100 university ranking changes and correlations between discounts, sales, and profit.",
-      "Built Tableau dashboards and interactive deep-dives for internet penetration and global happiness analysis.",
+      "Applied clustering, probabilistic analysis, and text mining across multiple real-world datasets.",
+      "Identified drivers for ranking changes and sales/profit behavior across seasons.",
+      "Built Tableau dashboards + interactive deep dives for stakeholders.",
     ],
   },
   {
@@ -72,9 +72,9 @@ const projects = [
     image: reactLogo,
     link: "https://github.com/shivamlalakiya/Hyperspectral_image_classification",
     highlights: [
-      "Implemented hyperspectral image classification using CNNs/GANs and dimensionality reduction with PCA and k-PCA.",
-      "Reduced time/space complexity by ~50% via projection to lower-dimensional spaces using kernel methods.",
-      "Compared PCA-CNN vs baseline CNN and achieved ~30% lower training time and complexity.",
+      "Built hyperspectral classifiers with CNNs/GANs and PCA/k-PCA for dimensionality reduction.",
+      "Reduced time/space complexity by ~50% using kernel projections.",
+      "Achieved ~30% lower training time vs baseline CNNs with PCA-CNN variants.",
     ],
   },
 ];

@@ -12,14 +12,11 @@ const Career = () => {
         "Washington University in St. Louis · Full-time · St Louis, Missouri (On-site)",
       logo: wustlLogo,
       bullets: [
-        "Directed multiple projects supporting the Grateful Patient Program within the medical advancement team, leveraging data to enhance fundraising strategies.",
-        "Orchestrated a proactive data quality monitoring pipeline using Apache Airflow with weekly digest alerts, driving a 40% reduction in account duplications and a 20% decrease in overall data errors.",
-        "Architected a multi-model forecasting suite (ARIMA, LSTM, Prophet) integrating macroeconomic indicators, achieving 90%+ accuracy in predicting cash flow for strategic financial planning.",
-        "Designed and deployed an engagement scoring system across events, digital interactions, and volunteering data to improve prospect prioritization and boost outreach effectiveness by 25%.",
-        "Engineered a scalable ETL automation framework generating 50+ monthly reports, reducing a 4-hour manual process to under 5 minutes with trusted, error-free reporting for senior leadership.",
-        "Unlocked a new fundraising pipeline by segmenting a dormant CRM database of 750,000 leads and creating a targeted acquisition strategy for direct marketing campaigns.",
-        "Led the data model transition to the Windfall platform by reverse-engineering gift capacity metrics and implementing a new segmentation framework for major gift strategies.",
-        "Aggregated data from clinicaltrials.gov, NIH grants, and Elsevier to map medical faculty and identify 50+ high-impact physicians with strong research involvement.",
+        "Forecasting: built ARIMA/LSTM/Prophet suite with 90%+ cash-flow accuracy by integrating macroeconomic data for board-level planning.",
+        "Automation: generated 50+ monthly reports; cut a 4-hour manual workflow to under 5 minutes via scalable ETL.",
+        "Data quality: Airflow monitoring + weekly digest reduced duplicate accounts by 40% and overall errors by 20%.",
+        "Scoring: shipped an engagement model across events/digital/volunteering data; improved outreach efficiency by 25%.",
+        "Growth analytics: segmented a dormant 750K-lead CRM to unlock a new acquisition pipeline for direct marketing.",
       ],
     },
     {
@@ -29,10 +26,10 @@ const Career = () => {
       rightTitle: "Sep 2023–Feb 2024",
       details: "",
       bullets: [
-        "Developed an automated Apache Airflow pipeline for transferring pathological images, reducing data processing time by 20% and improving on-time delivery for research studies.",
-        "Engineered and deployed computer vision models, improving pathological image analysis and biomarker identification by 10%.",
-        "Established data quality control procedures, validation protocols, and auditing frameworks to improve precision and reporting reliability.",
-        "Collaborated with lab scientists to standardize slide and file naming, eliminating errors by 17%.",
+        "Built Airflow pipeline for pathology image transfer; reduced processing time by 20% and improved on-time delivery.",
+        "Deployed CV models for pathology analysis; improved biomarker identification by 10%.",
+        "Streamlined transformation workflows (dbt) to improve consistency and reduce downstream reporting errors.",
+        "Standardized slide/file naming with lab teams; reduced errors by 17%.",
       ],
     },
     {
@@ -42,11 +39,9 @@ const Career = () => {
       rightTitle: "May 2022–Dec 2022",
       details: "",
       bullets: [
-        "Researched and evaluated CV algorithms; selected YOLOv5 and Faster R-CNN for detection and implemented a custom multi-object tracking approach.",
-        "Designed, validated, and deployed ML models and tools to analyze biological sequence data and support vector design initiatives.",
-        "Built NLP-based models on gene/protein sequences to predict tropism and identify tissue-specific motifs using positional encodings.",
-        "Developed Graph Neural Networks to extract essential features from whole genome sequencing data for improved tropism modeling (TensorFlow + CUDA/HPC).",
-        "Built ETL containers and Airflow DAGs to transform and load experimental data into FASTA format, removing manual server loading steps.",
+        "Built sequence ML (positional encoding, GNNs) to predict tropism and guide vector design; shipped models and tooling to stakeholders.",
+        "Evaluated CV detection/tracking approaches (YOLOv5, Faster R-CNN) and implemented a production-ready pipeline.",
+        "Automated ETL with Docker + Airflow DAGs to remove manual data loading and formatting steps.",
       ],
     },
     {
@@ -68,9 +63,8 @@ const Career = () => {
       rightTitle: "Jan 2020–Jan 2021",
       details: "",
       bullets: [
-        "Built an LSTM/RNN-based time-series caching policy achieving 90% success rate in predicting user preferences for distributed caching.",
-        "Preprocessed and filtered a custom 12GB dataset using Pandas to support robust deep learning model training.",
-        "Benchmarked performance and delivered a 130% improvement in hit rates over LIFO/LRU/LFU policies.",
+        "Built an LSTM-based caching policy; improved hit rates by 130% vs LRU/LFU via time-series request forecasting.",
+        "Processed 100GB+ of user data and achieved a 90% forecasting success rate for preference prediction.",
       ],
     },
     {

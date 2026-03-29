@@ -19,9 +19,24 @@ const Contact = () => {
                 LinkedIn — shivam-lalakiya
               </a>
             </p>
+            <p>
+              <a href="mailto:shivamlalakiya151299@gmail.com" data-cursor="disable">
+                Email — shivamlalakiya151299@gmail.com
+              </a>
+            </p>
+            <p>
+              <a
+                href="/Shivam_Lalakiya_resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                data-cursor="disable"
+              >
+                Resume — PDF
+              </a>
+            </p>
             <h4>Education</h4>
             <p>
-              M.S. Data Analytics Engineering, Northeastern University
+              M.S. Data Analytics Engineering (GPA 3.8/4.0), Northeastern University
             </p>
           </div>
           <div className="contact-box">
