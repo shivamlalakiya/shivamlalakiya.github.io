@@ -2,6 +2,7 @@ import {
   FaGithub,
   FaLinkedinIn,
 } from "react-icons/fa6";
+import { SiGooglescholar } from "react-icons/si";
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
@@ -63,6 +64,7 @@ const SocialIcons = () => {
             href={socialLinks.github}
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub"
           >
             <FaGithub />
           </a>
@@ -72,8 +74,19 @@ const SocialIcons = () => {
             href={socialLinks.linkedin}
             target="_blank"
             rel="noreferrer"
+            aria-label="LinkedIn"
           >
             <FaLinkedinIn />
+          </a>
+        </span>
+        <span>
+          <a
+            href={socialLinks.scholar}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Google Scholar"
+          >
+            <SiGooglescholar />
           </a>
         </span>
       </div>

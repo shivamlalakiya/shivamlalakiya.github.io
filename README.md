@@ -1,10 +1,10 @@
 # Shivam Lalakiya — Portfolio
 
-This repository contains the source code for my personal portfolio built with React, TypeScript, Three.js, React Three Fiber, and GSAP.
+Source code for my personal portfolio: a single-page site built with React, TypeScript, Vite, and GSAP, with a lightweight Three.js physics visualization for the tech-stack section.
 
 Live site: [https://shivamlalakiya.github.io/](https://shivamlalakiya.github.io/)
 
-![Portfolio Preview](public/images/preview1.png)
+![Portfolio Preview](public/og-image.png)
 
 ## Table of Contents
 
@@ -13,19 +13,17 @@ Live site: [https://shivamlalakiya.github.io/](https://shivamlalakiya.github.io/
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Available Scripts](#available-scripts)
-- [GSAP License Note](#gsap-license-note)
 - [Customization Guide](#customization-guide)
-- [Troubleshooting](#troubleshooting)
 - [Deployment](#deployment)
 - [License](#license)
 
 ## Features
 
-- Responsive one-page portfolio layout with reusable section components.
-- 3D character scene rendering powered by React Three Fiber and Three.js.
-- GSAP-powered animations and transitions for interactive storytelling.
-- Custom cursor, hover interactions, and scroll-driven visual effects.
-- Organized component architecture with dedicated utilities and style modules.
+- Apple-inspired dark UI driven by a single design-token system in `src/index.css`.
+- Photo-cutout hero with a background-removed portrait, ambient glow, and animated intro.
+- GSAP ScrollSmoother + scroll-triggered reveals across sections.
+- Sections: Landing, About, Career timeline, Work (project carousel), Tech Stack (3D physics playground), Contact.
+- Custom cursor, hover interactions, responsive layout, and reduced-motion / keyboard-focus support.
 
 ## Tech Stack
 
@@ -35,45 +33,41 @@ Live site: [https://shivamlalakiya.github.io/](https://shivamlalakiya.github.io/
 - TypeScript
 - Vite
 
-### Animation and 3D
+### Animation & 3D
 
-- GSAP + `@gsap/react`
+- GSAP (ScrollSmoother, ScrollTrigger, SplitText)
 - Three.js
 - `@react-three/fiber`
 - `@react-three/drei`
 - `@react-three/postprocessing`
-- `@react-three/cannon`
 - `@react-three/rapier`
 
-### Supporting Libraries
+### Supporting
 
 - `react-icons`
-- `react-fast-marquee`
-- `@vercel/analytics`
 
 ## Project Structure
 
 ```text
 .
-├── public/                    # Static assets
+├── public/                    # Static assets (photo, tech tiles, resume, og-image, favicon)
 ├── src/
-│   ├── assets/                # Local media/assets
 │   ├── components/
-│   │   ├── Character/         # 3D scene + character logic/utilities
-│   │   ├── styles/            # Section/component CSS files
+│   │   ├── styles/            # Section/component CSS
+│   │   ├── utils/             # GSAP scroll + intro-FX helpers
 │   │   ├── About.tsx
 │   │   ├── Career.tsx
 │   │   ├── Contact.tsx
 │   │   ├── Landing.tsx
-│   │   ├── MainContainer.tsx  # Main page composition
+│   │   ├── MainContainer.tsx  # Page composition
 │   │   ├── Navbar.tsx
 │   │   ├── TechStack.tsx
-│   │   ├── WhatIDo.tsx
 │   │   └── Work.tsx
-│   ├── context/               # Global providers (loading state, etc.)
-│   ├── data/                  # Static data/content definitions
+│   ├── context/               # LoadingProvider wrapper
+│   ├── data/                  # Content: profile, experience, projects, social
 │   ├── App.tsx
 │   └── main.tsx
+├── index.html
 ├── package.json
 └── vite.config.ts
 ```
@@ -82,95 +76,44 @@ Live site: [https://shivamlalakiya.github.io/](https://shivamlalakiya.github.io/
 
 ### Prerequisites
 
-- Node.js 18+ (recommended)
-- npm 9+ (or compatible)
+- Node.js 18+
+- npm 9+
 
 ### Installation
 
-1. Clone the repository:
+```bash
+git clone https://github.com/shivamlalakiya/shivamlalakiya.github.io
+cd shivamlalakiya.github.io
+npm install
+npm run dev
+```
 
-   ```bash
-   git clone <your-repository-url>
-   cd 3d-portfolio
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Start the local development server:
-
-   ```bash
-   npm run dev
-   ```
-
-4. Open the URL shown in the terminal (typically `http://localhost:5173`).
+Open the URL shown in the terminal (typically `http://localhost:5173`).
 
 ## Available Scripts
 
-- `npm run dev`  
-  Starts Vite dev server and exposes host for local network testing.
-
-- `npm run build`  
-  Type-checks and builds a production-ready bundle.
-
-- `npm run preview`  
-  Serves the production build locally for verification.
-
-- `npm run lint`  
-  Runs ESLint checks across the project.
-
-## GSAP License Note
-
-This project uses the standard `gsap` package, including bonus plugins now available in the core package.
-
-- Install dependencies with `npm install`.
-- If migrating from older setups, remove `gsap-trial` from your project.
-
-Read official installation guidance here: [GSAP Installation Docs](https://gsap.com/docs/v3/Installation/)
+- `npm run dev` — start the Vite dev server (host exposed for LAN testing).
+- `npm run build` — type-check (`tsc -b`) and build the production bundle.
+- `npm run preview` — serve the production build locally.
+- `npm run lint` — run ESLint.
 
 ## Customization Guide
 
-You can adapt this portfolio to your own profile by updating the following areas:
-
-- **Content sections**: Edit files in `src/components/` such as `About.tsx`, `Career.tsx`, `WhatIDo.tsx`, and `Work.tsx`.
-- **Data source**: Update static values in files under `src/data/`.
-- **Styling**: Modify component styles in `src/components/styles/` and global styles in `src/index.css` / `src/App.css`.
-- **3D scene behavior**: Adjust scene logic in `src/components/Character/` and related utilities.
-- **Animations**: Tweak GSAP utilities under `src/components/utils/`.
-
-## Troubleshooting
-
-- **Blank screen in development**  
-  Check browser console for module import errors and verify all dependencies are installed.
-
-- **3D performance issues on low-end devices**  
-  Reduce scene complexity and post-processing effects in the character/scene utilities.
-
-- **GSAP plugin errors**  
-  Ensure you have the correct plugin package and license configuration for your target environment.
-
-- **TypeScript build failures**  
-  Run `npm run build` and address reported type errors before deploying.
+- **Content**: edit `src/data/` (`profile.ts`, `experience.ts`, `projects.ts`, `social.ts`).
+- **Copy in sections**: `src/components/` (`About.tsx`, `Career.tsx`, `Work.tsx`, `Contact.tsx`).
+- **Styling / design tokens**: `src/index.css` (`:root`) and `src/components/styles/`.
+- **Scroll & intro animations**: `src/components/utils/` (`GsapScroll.ts`, `initialFX.ts`).
+- **Tech-stack visualization**: `src/components/TechStack.tsx` (`imageUrls` array + physics settings).
 
 ## Deployment
 
-1. Create a production build:
+Deployed to GitHub Pages from the `dist/` build. To build and validate locally:
 
-   ```bash
-   npm run build
-   ```
-
-2. Validate locally:
-
-   ```bash
-   npm run preview
-   ```
-
-3. Deploy the generated `dist/` folder to your hosting provider (for example Vercel, Netlify, or Cloudflare Pages).
+```bash
+npm run build
+npm run preview
+```
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+Open source under the [MIT License](LICENSE).

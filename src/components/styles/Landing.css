@@ -18,26 +18,91 @@
 .landing-grid {
   height: 100%;
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) minmax(320px, 520px) minmax(260px, 1fr);
-  align-items: center;
-  column-gap: clamp(18px, 3vw, 48px);
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: stretch;
+  column-gap: clamp(24px, 4vw, 80px);
 }
 
-.landing-avatar {
+/* ── Text column (left) ── */
+.landing-text {
+  align-self: center;
+  justify-self: start;
+  position: relative;
+  z-index: 9;
+  max-width: 640px;
+}
+
+.landing-eyebrow {
+  margin: 0 0 12px;
+  color: var(--accentColor);
+  font-weight: 500;
+  font-size: clamp(16px, 1.4vw, 26px);
+  letter-spacing: 0.01em;
+}
+
+.landing-name {
+  margin: 0;
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: var(--track-tighter);
+  font-size: clamp(46px, 6vw, 104px);
+  line-height: 0.92;
+}
+
+.landing-role {
+  margin: 22px 0 0;
+  color: var(--text-2);
+  font-weight: 500;
+  letter-spacing: var(--track-tight);
+  font-size: clamp(17px, 1.7vw, 30px);
+}
+
+.landing-role span {
+  color: var(--accent);
+  padding: 0 4px;
+}
+
+/* ── Photo column (right, grounded) ── */
+.landing-photo-wrap {
   position: relative;
   z-index: 6;
-  pointer-events: none;
+  align-self: end;
+  justify-self: center;
   width: 100%;
-  height: min(92vh, 760px);
+  height: min(84vh, 760px);
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
-.character-container {
-  width: 100%;
-  height: 100%;
+.landing-photo {
   position: relative;
+  z-index: 2;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 30px 55px rgba(0, 0, 0, 0.6));
+  -webkit-mask-image: linear-gradient(180deg, #000 88%, transparent);
+  mask-image: linear-gradient(180deg, #000 88%, transparent);
+}
+
+/* Soft teal ambient light behind the portrait. */
+.landing-photo-glow {
+  position: absolute;
+  z-index: 1;
+  width: 116%;
+  height: 60%;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side,
+      rgba(45, 212, 191, 0.5),
+      rgba(45, 212, 191, 0) 72%);
+  filter: blur(70px);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .landing-circle1 {
@@ -47,10 +112,11 @@
   position: fixed;
   width: 300px;
   height: 300px;
-  background-color: #22d3ee;
-  box-shadow: inset -50px 40px 50px rgba(0, 180, 180, 0.6);
-  filter: blur(60px);
+  background-color: var(--accent-strong);
+  box-shadow: inset -50px 40px 50px rgba(0, 180, 180, 0.45);
+  filter: blur(80px);
   border-radius: 50%;
+  opacity: 0.45;
   animation: loadingCircle 5s linear infinite;
 }
 
@@ -58,10 +124,14 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 130px;
-  background-image: linear-gradient(0deg,
-      transparent,
-      var(--backgroundColor) 70%);
+  height: 96px;
+  background-image: linear-gradient(180deg,
+      rgba(10, 14, 23, 0.72),
+      rgba(10, 14, 23, 0));
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-mask-image: linear-gradient(180deg, #000 45%, transparent);
+  mask-image: linear-gradient(180deg, #000 45%, transparent);
   pointer-events: none;
   z-index: 12;
   opacity: 0;
@@ -87,10 +157,11 @@
   display: none;
   width: 300px;
   height: 300px;
-  background-color: #22d3ee;
-  box-shadow: inset -50px 40px 50px rgba(0, 180, 180, 0.6);
-  filter: blur(50px);
+  background-color: var(--accent-strong);
+  box-shadow: inset -50px 40px 50px rgba(0, 180, 180, 0.45);
+  filter: blur(70px);
   border-radius: 50%;
+  opacity: 0.4;
   animation: loadingCircle2 5s linear infinite;
 }
 
@@ -100,290 +171,27 @@
   }
 }
 
-.landing-video,
-.landing-image {
-  position: absolute;
-  bottom: 0;
-  height: 95%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.landing-image img {
-  height: 100%;
-  z-index: 2;
-  position: relative;
-}
-
-.character-rim {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  z-index: 1;
-  background-color: #22d3ee;
-  transform: translate(-50%, 36%) scaleX(1.4);
-  box-shadow: inset 66px 35px 85px 0px rgba(0, 180, 180, 0.65);
-  filter: blur(50px);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 100%) scale(1.4);
-  opacity: 0;
-}
-
-.character-model {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  max-width: 520px;
-  max-height: 760px;
-  transform: none;
-  left: auto;
-  z-index: 0;
-  bottom: auto;
-  pointer-events: inherit;
-}
-
-.character-model::after {
-  content: "";
-  width: 100vw;
-  height: 250px;
-  background-image: linear-gradient(to bottom,
-      transparent,
-      var(--backgroundColor) 70%);
-  bottom: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9;
-  position: absolute;
-}
-
-.character-model::before {
-  content: "";
-  width: 100vw;
-  height: 700px;
-  background-color: var(--backgroundColor);
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9;
-  position: absolute;
-}
-
-.character-loaded .character-rim {
-  animation: backlight 3s forwards;
-  animation-delay: 0.3s;
-  opacity: 0;
-}
-
-.character-model canvas {
-  position: relative;
-  pointer-events: none;
-  z-index: 2;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.character-hover {
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  top: 50%;
-  left: 50%;
-  z-index: 3;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-}
-
-.landing-intro {
-  position: relative;
-  z-index: 9;
-  justify-self: start;
-}
-
-.landing-intro h2 {
-  margin: 0;
-  color: var(--accentColor);
-  font-size: 22px;
-  font-weight: 300;
-  letter-spacing: 2px;
-}
-
-.landing-intro h1 {
-  margin: 0;
-  letter-spacing: 2px;
-  font-size: 28px;
-  line-height: 28px;
-  font-weight: 500;
-  font-family: "Geist", sans-serif;
-}
-
-/* .landing-intro h1 span {
-   font-weight: 200; 
-} */
-
-.landing-info {
-  position: relative;
-  z-index: 9;
-  justify-self: end;
-  text-align: left;
-  transform: none;
-}
-
-.landing-info h3 {
-  font-size: 22px;
-  letter-spacing: 2px;
-  font-weight: 300;
-  color: var(--accentColor);
-  margin: 0;
-}
-
-.landing-info h2 {
-  margin: 0;
-  margin-top: -20px;
-  margin-left: 20px;
-  font-family: "Geist", sans-serif;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 40px;
-  position: relative;
-  display: flex;
-  flex-wrap: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.landing-h2-info-1 {
-  position: absolute;
-  top: 0;
-}
-
-h2.landing-info-h2 {
-  color: #14b8a6;
-  font-size: 42px;
-  width: 120%;
-  margin: 0;
-  font-family: "Geist", sans-serif;
-  font-weight: 600;
-  position: relative;
-  margin-left: -5px;
-}
-
-.landing-h2-2 {
-  position: absolute;
-  top: 0;
-}
-
-.landing-info-h2::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 120%;
-  z-index: 3;
-  background-image: linear-gradient(0deg,
-      var(--backgroundColor) 40%,
-      rgba(0, 0, 0, 0) 110%);
-  top: 0;
-  left: 0;
-}
-
 @media screen and (min-width: 500px) {
   .landing-circle2 {
     display: block;
   }
-
-  .character-model {
-    z-index: 0;
-  }
-
-  .landing-info h3 {
-    font-size: 18px;
-  }
-
-  .landing-intro h2 {
-    font-size: 18px;
-  }
-
-  .landing-intro h1 {
-    font-size: 30px;
-    line-height: 30px;
-  }
-
-  .landing-info h2 {
-    font-size: 35px;
-    line-height: 40px;
-  }
-
-  h2.landing-info-h2 {
-    font-size: 38px;
-  }
 }
 
-@media screen and (min-width: 768px) {
-  .character-model {
-    height: 80vh;
-  }
-
-  .landing-intro h2 {
-    font-size: 25px;
-  }
-
-  .landing-intro h1 {
-    font-size: 40px;
-    line-height: 35px;
-  }
-
-  .landing-info h3 {
-    font-size: 25px;
-  }
-
-  .landing-info h2 {
-    font-size: 45px;
-    line-height: 42px;
-  }
-
-  h2.landing-info-h2 {
-    font-size: 55px;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .character-model::after,
-  .character-model::before {
-    display: none;
-  }
-
+@media screen and (max-width: 900px) {
   .landing-grid {
-    grid-template-columns: minmax(340px, 1fr) minmax(380px, 620px) minmax(340px, 1fr);
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .landing-grid {
-    grid-template-columns: minmax(380px, 1fr) minmax(420px, 680px) minmax(380px, 1fr);
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .landing-intro h2 {
-    font-size: 35px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    align-content: center;
+    row-gap: 8px;
   }
 
-  .landing-intro h1 {
-    font-size: 60px;
-    line-height: 55px;
+  .landing-text {
+    align-self: end;
+    justify-self: center;
+    text-align: center;
   }
 
-  .landing-info h3 {
-    font-size: 35px;
-  }
-
-  .landing-info h2 {
-    font-size: 65px;
-    line-height: 62px;
-  }
-
-  h2.landing-info-h2 {
-    font-size: 75px;
+  .landing-photo-wrap {
+    height: min(46vh, 420px);
   }
 }

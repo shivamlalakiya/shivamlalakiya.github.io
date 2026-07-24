@@ -11,18 +11,6 @@ export type ExperienceItem = {
 // NOTE: logos are optional; components can render without them.
 export const experiences: ExperienceItem[] = [
   {
-    key: "open-source-pymc-marketing",
-    leftTitle: "Open-Source Contributor",
-    leftSubtitle: "PyMC Marketing (pymc-marketing) · OSS",
-    rightTitle: "Ongoing",
-    details: "Active contributor · Public GitHub",
-    bullets: [
-      "Contribute production-quality code and improvements to the pymc-marketing Python library.",
-      "Resolve complex issues across public repositories—triaging, debugging, and shipping maintainable fixes.",
-      "Write clear PR descriptions and collaborate with maintainers to land changes safely.",
-    ],
-  },
-  {
     key: "wustl",
     leftTitle: "Data Analyst",
     leftSubtitle: "Grateful Patient Program — University Advancement",
@@ -69,16 +57,6 @@ export const experiences: ExperienceItem[] = [
     bullets: [
       "Collaborated with Prof. Milad Siami to design assignments and homework for Introduction to Distributed Intelligence.",
       "Guided 50 students through coursework and held office hours to support learning outcomes.",
-    ],
-  },
-  {
-    key: "academic-service-editorial-peer-review",
-    leftTitle: "Peer Reviewer & Editorial Board",
-    leftSubtitle: "Academic & Professional Service",
-    rightTitle: "Active",
-    bullets: [
-      "Peer reviewer: IEEE, IJRMEET, JQST.",
-      "Editorial board member: GSEACT 2026.",
     ],
   },
   {

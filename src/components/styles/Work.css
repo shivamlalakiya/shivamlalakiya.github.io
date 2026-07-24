@@ -8,7 +8,8 @@
 
 .work-section h2 {
   font-size: 70px;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: var(--track-tighter);
   margin-top: 0;
   margin-bottom: 50px;
 }
@@ -30,8 +31,8 @@
 .carousel-track-container {
   overflow: hidden;
   width: 100%;
-  border-top: 1px solid #363636;
-  border-bottom: 1px solid #363636;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .carousel-track {
@@ -66,7 +67,9 @@
   line-height: 1;
   margin: 0;
   font-weight: 600;
-  opacity: 0.3;
+  letter-spacing: var(--track-tight);
+  color: var(--text);
+  opacity: 0.22;
 }
 
 .carousel-details {
@@ -77,15 +80,18 @@
 
 .carousel-details h4 {
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: var(--track-tight);
+  color: var(--text);
   margin: 0;
 }
 
 .carousel-category {
-  font-weight: 200;
-  color: #adacac;
+  font-weight: 400;
+  color: var(--accent);
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
+  letter-spacing: var(--track-normal);
 }
 
 .carousel-tools {
@@ -93,17 +99,18 @@
 }
 
 .carousel-tools .tools-label {
-  font-size: 14px;
-  font-weight: 400;
-  opacity: 0.6;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: var(--track-eyebrow);
 }
 
 .carousel-tools p {
-  font-weight: 200;
-  color: #adacac;
+  font-weight: 400;
+  color: var(--text-2);
   margin: 6px 0 0;
+  line-height: 1.55;
   font-size: 15px;
 }
 
@@ -114,32 +121,98 @@
   align-items: center;
 }
 
+/* ── Project card (replaces the old image) ── */
+.work-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 300px;
+  padding: 32px;
+  box-sizing: border-box;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  background: radial-gradient(120% 120% at 85% 0%,
+      rgba(94, 234, 212, 0.14), transparent 55%), var(--surface);
+  color: var(--text);
+  overflow: hidden;
+  transition: border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.work-card:hover {
+  border-color: rgba(94, 234, 212, 0.4);
+  transform: translateY(-4px);
+}
+
+.work-card-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--track-eyebrow);
+  color: var(--accent);
+}
+
+.work-card-glyph {
+  font-size: 56px;
+  color: var(--text-3);
+  align-self: flex-start;
+  margin: 20px 0;
+  transition: color var(--dur) var(--ease);
+}
+
+.work-card:hover .work-card-glyph {
+  color: var(--text-2);
+}
+
+.work-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: var(--track-normal);
+  color: var(--text-2);
+  transition: color var(--dur) var(--ease);
+}
+
+.work-card:hover .work-card-cta {
+  color: var(--accent);
+}
+
 /* ── Navigation Arrows ── */
 .carousel-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #eae5ec;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: var(--r-pill);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 22px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    color var(--dur) var(--ease), transform var(--dur) var(--ease);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 .carousel-arrow:hover {
-  background: rgba(94, 234, 212, 0.15);
-  border-color: var(--accentColor);
+  background: rgba(94, 234, 212, 0.12);
+  border-color: rgba(94, 234, 212, 0.5);
   color: var(--accentColor);
-  box-shadow: 0 0 20px rgba(94, 234, 212, 0.15);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.96);
 }
 
 .carousel-arrow-left {
@@ -159,13 +232,14 @@
 }
 
 .carousel-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 8px;
+  height: 8px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--border-2);
   background: transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: width var(--dur) var(--ease), background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
   padding: 0;
 }
 
@@ -175,9 +249,9 @@
 }
 
 .carousel-dot-active {
+  width: 26px;
   background: var(--accentColor);
   border-color: var(--accentColor);
-  box-shadow: 0 0 8px rgba(94, 234, 212, 0.4);
 }
 
 /* ── Work Image (reused) ── */

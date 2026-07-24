@@ -1,12 +1,7 @@
 import "./styles/Career.css";
-import wustlLogo from "../assets/wustl.svg";
 import { experiences } from "../data/experience";
 
 const Career = () => {
-  const mergedExperiences = experiences.map((exp) =>
-    exp.key === "wustl" ? { ...exp, logo: wustlLogo } : exp
-  );
-
   return (
     <div className="career-section section-container">
       <div className="career-container">
@@ -18,23 +13,10 @@ const Career = () => {
           <div className="career-timeline">
             <div className="career-dot"></div>
           </div>
-          {mergedExperiences.map((exp) => (
+          {experiences.map((exp) => (
             <div className="career-info-box" key={exp.key}>
               <div className="career-info-in">
                 <div className="career-role">
-                  {exp.logo && (
-                    <img
-                      src={exp.logo}
-                      alt={`${exp.leftSubtitle} logo`}
-                      style={{
-                        width: 34,
-                        height: 34,
-                        borderRadius: 8,
-                        display: "block",
-                        marginBottom: 10,
-                      }}
-                    />
-                  )}
                   <h4>{exp.leftTitle}</h4>
                   <h5>{exp.leftSubtitle}</h5>
                   {exp.details ? (

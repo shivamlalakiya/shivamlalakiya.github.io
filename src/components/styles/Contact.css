@@ -9,9 +9,10 @@
 
 .contact-section h3 {
   font-size: 60px;
-  font-weight: 400;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: var(--track-tighter);
   margin: 0;
+  margin-bottom: 50px;
 }
 
 .contact-flex {
@@ -20,9 +21,12 @@
 }
 
 .contact-flex h4 {
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
-  opacity: 0.6;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: var(--track-eyebrow);
+  color: var(--text-3);
 }
 
 .contact-box {
@@ -33,16 +37,42 @@
 .contact-flex p {
   margin-top: 10px;
   margin-bottom: 20px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+
+.contact-flex p a {
+  transition: color var(--dur) var(--ease);
+}
+
+.contact-flex p a:hover {
+  color: var(--accent);
 }
 
 a.contact-social {
   font-size: 25px;
-  border-bottom: 1px solid #ccc;
+  font-weight: 500;
+  letter-spacing: var(--track-tight);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-2);
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+a.contact-social:hover {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .contact-box h2 {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 23px;
+  letter-spacing: var(--track-tight);
+  line-height: 1.25;
+  color: var(--text);
   margin: 0;
 }
 
@@ -51,12 +81,14 @@ a.contact-social {
 }
 
 .contact-box h5 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 1;
   display: flex;
-  gap: 10px;
-  opacity: 0.5;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: var(--text-3);
 }
 
 @media only screen and (max-width: 1600px) {

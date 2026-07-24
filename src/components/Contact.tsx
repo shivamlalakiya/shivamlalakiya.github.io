@@ -61,13 +61,22 @@ const Contact = () => {
             >
               LinkedIn <MdArrowOutward />
             </a>
+            <a
+              href={socialLinks.scholar}
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="disable"
+              className="contact-social"
+            >
+              Google Scholar <MdArrowOutward />
+            </a>
           </div>
           <div className="contact-box">
             <h2>
               Designed and Developed <br /> by <span>Shivam Lalakiya</span>
             </h2>
             <h5>
-              <MdCopyright /> 2026
+              <MdCopyright /> {new Date().getFullYear()}
             </h5>
           </div>
         </div>

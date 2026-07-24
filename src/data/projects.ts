@@ -10,26 +10,6 @@ export type ProjectItem = {
 // Images are supplied by the rendering component (kept as string to avoid coupling data -> assets).
 export const projects: Omit<ProjectItem, "image">[] = [
   {
-    title: "Data-Driven Fundraising Intelligence",
-    category: "Author · Applied Analytics",
-    tools: "Data strategy, experimentation, forecasting, decision intelligence",
-    link: "https://github.com/shivamlalakiya",
-    highlights: [
-      "Authored work focused on turning fundraising data into measurable, decision-ready intelligence.",
-      "Emphasis on reproducible analysis, stakeholder-ready narratives, and scalable measurement.",
-    ],
-  },
-  {
-    title: "Open Source Contributions (PyMC Marketing + GitHub)",
-    category: "Open Source",
-    tools: "Python, testing, debugging, maintainability, collaboration",
-    link: "https://github.com/shivamlalakiya",
-    highlights: [
-      "Active code contributions to the pymc-marketing Python library.",
-      "Track record of resolving complex issues across public repositories via high-quality PRs.",
-    ],
-  },
-  {
     title: "Quora Question Pairs — Duplicate Detection",
     category: "NLP · Deep Learning",
     tools: "Word2Vec, LSTM, SHAP/LIME, AWS Elastic Beanstalk, Docker",

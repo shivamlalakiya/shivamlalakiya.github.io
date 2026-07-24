@@ -1,4 +1,3 @@
-import "./styles/Loading.css";
 import { profile } from "../data/profile";
 
 const SuspenseFallback = ({ label = "Loading" }: { label?: string }) => {
@@ -19,7 +18,7 @@ const SuspenseFallback = ({ label = "Loading" }: { label?: string }) => {
         </div>
         <div style={{ fontSize: 18, fontWeight: 600 }}>{label}…</div>
         <div style={{ fontSize: 13, opacity: 0.7, marginTop: 6 }}>
-          Preparing the 3D scene and UI
+          Just a moment
         </div>
       </div>
     </div>

@@ -2,10 +2,7 @@ import { useState, useCallback } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
-import reactLogo from "../assets/react.svg";
-import { projects as projectsData } from "../data/projects";
-
-const projects = projectsData.map((p) => ({ ...p, image: reactLogo }));
+import { projects } from "../data/projects";
 
 const Work = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -68,7 +65,11 @@ const Work = () => {
               }}
             >
               {projects.map((project, index) => (
-                <div className="carousel-slide" key={index}>
+                <div
+                  className="carousel-slide"
+                  key={index}
+                  aria-hidden={index !== currentIndex}
+                >
                   <div className="carousel-content">
                     <div className="carousel-info">
                       <div className="carousel-number">
@@ -100,9 +101,10 @@ const Work = () => {
                     </div>
                     <div className="carousel-image-wrapper">
                       <WorkImage
-                        image={project.image}
                         alt={project.title}
                         link={project.link}
+                        category={project.category}
+                        active={index === currentIndex}
                       />
                     </div>
                   </div>
