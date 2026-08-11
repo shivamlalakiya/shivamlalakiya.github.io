@@ -3,11 +3,14 @@ import { experiences } from "../data/experience";
 
 const Career = () => {
   return (
-    <div className="career-section section-container">
+    <div className="career-section section-container" id="career">
       <div className="career-container">
+        <h3 className="section-eyebrow">
+          <span className="section-index">02</span> Career
+        </h3>
         <h2>
-          My career <span>&</span>
-          <br /> experience
+          {experiences.length} roles, <span>one thread</span>
+          <br /> turning data into decisions.
         </h2>
         <div className="career-info">
           <div className="career-timeline">
@@ -28,12 +31,23 @@ const Career = () => {
                 <h3>{exp.rightTitle}</h3>
               </div>
               <p>
-                {exp.bullets.map((b, i) => (
-                  <span key={i}>
-                    • {b}
-                    <br />
-                  </span>
-                ))}
+                {exp.bullets.map((b, i) => {
+                  const [label, ...rest] = b.split(": ");
+                  const body = rest.join(": ");
+                  return (
+                    <span key={i}>
+                      •{" "}
+                      {body ? (
+                        <>
+                          <strong>{label}:</strong> {body}
+                        </>
+                      ) : (
+                        b
+                      )}
+                      <br />
+                    </span>
+                  );
+                })}
               </p>
             </div>
           ))}

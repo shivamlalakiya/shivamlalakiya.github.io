@@ -24,7 +24,7 @@ export function setHeroScroll() {
 
   // Reveal the About statement as it scrolls into view.
   gsap.fromTo(
-    ".about-me",
+    ".about-hero",
     { opacity: 0, y: reduce ? 0 : 60 },
     {
       opacity: 1,

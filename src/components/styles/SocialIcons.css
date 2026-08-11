@@ -17,13 +17,8 @@
   z-index: 999;
   padding: 10px;
 }
-.social-icons:hover {
-  transition: 0.3s;
-  color: var(--backgroundColor);
-}
 .social-icons a:hover {
-  color: var(--backgroundColor);
-  /* transform: scale(1.2); */
+  color: var(--accentColor);
 }
 .social-icons span {
   width: 50px;

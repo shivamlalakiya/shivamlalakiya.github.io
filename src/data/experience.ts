@@ -19,10 +19,8 @@ export const experiences: ExperienceItem[] = [
       "Washington University in St. Louis · Full-time · St. Louis, Missouri (On-site)",
     bullets: [
       "Forecasting: built ARIMA/LSTM/Prophet suite with 90%+ cash-flow accuracy by integrating macroeconomic data for board-level planning.",
-      "Automation: generated 50+ monthly reports; cut a 4-hour manual workflow to under 5 minutes via scalable ETL.",
-      "Data quality: Airflow monitoring + weekly digest reduced duplicate accounts by 40% and overall errors by 20%.",
-      "Scoring: shipped an engagement model across events/digital/volunteering data; improved outreach efficiency by 25%.",
-      "Growth analytics: segmented a dormant 750K-lead CRM to unlock a new acquisition pipeline for direct marketing.",
+      "Automation: generated 50+ monthly reports; cut a multi-hour manual workflow to under 5 minutes via scalable ETL.",
+      "AI agents: built internal agents over MCP connections to Salesforce and our codebase to write code and generate leadership-ready summaries.",
     ],
   },
   {
@@ -33,8 +31,6 @@ export const experiences: ExperienceItem[] = [
     bullets: [
       "Built Airflow pipeline for pathology image transfer; reduced processing time by 20% and improved on-time delivery.",
       "Deployed CV models for pathology analysis; improved biomarker identification by 10%.",
-      "Streamlined transformation workflows (dbt) to improve consistency and reduce downstream reporting errors.",
-      "Standardized slide/file naming with lab teams; reduced errors by 17%.",
     ],
   },
   {

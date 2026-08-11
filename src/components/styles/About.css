@@ -1,78 +1,73 @@
 .about-section {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  place-items: center;
-  position: relative;
-  opacity: 1;
-  height: auto;
-  width: var(--cWidth);
+  padding: clamp(100px, 14vw, 160px) 0 clamp(60px, 8vw, 100px);
   margin: auto;
 }
-.about-me {
-  padding: 50px 0px;
-  padding-bottom: 0;
-  width: 500px;
-  max-width: calc(100% - 15px);
-}
-.about-me h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: var(--track-eyebrow);
-  font-weight: 600;
-  color: var(--accentColor);
-  margin-bottom: 22px;
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 20px;
 }
 
-.about-me p {
-  font-size: 33px;
-  font-weight: 500;
-  line-height: 1.24;
-  letter-spacing: var(--track-tight);
+.about-card-bio {
+  grid-row: 1 / 3;
+}
+
+.about-card-toolkit {
+  grid-column: 1 / -1;
+}
+
+.about-card-bio p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-2);
+  margin: 0 0 16px;
+}
+
+.about-card-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.about-role {
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+
+.about-role:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.about-role h5 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
   color: var(--text);
 }
 
-.about-me p span {
-  color: var(--accent);
+.about-role .about-accent {
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+  margin: 4px 0;
 }
 
-@media only screen and (min-width: 600px) {
-  .about-section {
-    justify-content: center;
-  }
+.about-role small {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
 }
-@media only screen and (min-width: 768px) {
-  .about-me {
-    width: 500px;
-    max-width: calc(100% - 70px);
-    transform: translateY(0%);
+
+@media only screen and (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
   }
-  .about-section {
-    opacity: 1;
+
+  .about-card-bio {
+    grid-row: auto;
   }
-}
-@media only screen and (min-width: 1025px) {
-  .about-section {
-    width: var(--cWidth);
-    justify-content: center;
-    max-width: 1920px;
-    height: var(--vh);
-    padding: 0px;
-    opacity: 1;
-  }
-  .about-me {
-    padding: 0px;
-    width: 100%;
-    max-width: 1000px;
-  }
-  .about-me p {
-    font-size: 1.9vw;
-    line-height: 2.3vw;
-  }
-}
-@media only screen and (min-width: 1950px) {
-  .about-me p {
-    font-size: 2.5rem;
-    line-height: 2.7rem;
+
+  .about-card {
+    padding: 24px;
   }
 }

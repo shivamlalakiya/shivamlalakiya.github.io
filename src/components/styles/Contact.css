@@ -7,12 +7,14 @@
   background-color: var(--backgroundColor);
 }
 
-.contact-section h3 {
+.contact-title {
+  font-family: var(--font-serif);
   font-size: 60px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: var(--track-tighter);
   margin: 0;
   margin-bottom: 50px;
+  color: var(--text);
 }
 
 .contact-flex {
@@ -47,6 +49,11 @@
 
 .contact-flex p a:hover {
   color: var(--accent);
+}
+
+.contact-flex p strong {
+  font-weight: 600;
+  color: var(--text);
 }
 
 a.contact-social {
@@ -92,7 +99,7 @@ a.contact-social:hover {
 }
 
 @media only screen and (max-width: 1600px) {
-  .contact-section h3 {
+  .contact-title {
     font-size: 50px;
   }
 
@@ -106,7 +113,7 @@ a.contact-social:hover {
 }
 
 @media only screen and (max-width: 1300px) {
-  .contact-section h3 {
+  .contact-title {
     font-size: 40px;
   }
 

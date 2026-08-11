@@ -1,12 +1,16 @@
 import { MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
 import { socialLinks } from "../data/social";
+import { education } from "../data/education";
 
 const Contact = () => {
   return (
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
-        <h3>Contact</h3>
+        <h3 className="section-eyebrow">
+          <span className="section-index">05</span> Contact
+        </h3>
+        <h2 className="contact-title">Let's talk</h2>
         <div className="contact-flex">
           <div className="contact-box">
             <h4>Connect</h4>
@@ -17,12 +21,12 @@ const Contact = () => {
                 rel="noreferrer"
                 data-cursor="disable"
               >
-                LinkedIn — shivam-lalakiya
+                <strong>LinkedIn</strong> — shivam-lalakiya
               </a>
             </p>
             <p>
               <a href={`mailto:${socialLinks.email}`} data-cursor="disable">
-                Email — {socialLinks.email}
+                <strong>Email</strong> — {socialLinks.email}
               </a>
             </p>
             <p>
@@ -32,14 +36,15 @@ const Contact = () => {
                 rel="noreferrer"
                 data-cursor="disable"
               >
-                Resume — PDF
+                <strong>Resume</strong> — PDF
               </a>
             </p>
             <h4>Education</h4>
-            <p>
-              M.S. Data Analytics Engineering (GPA 3.8/4.0), Northeastern University, Boston, MA
-            </p>
-            <p>B.Tech. Electronics and Communication Engineering (CGPA 8.5/10), SVNIT Surat, Gujarat, India</p>
+            {education.map((e) => (
+              <p key={e.degree}>
+                <strong>{e.degree}</strong> ({e.meta}), {e.school}
+              </p>
+            ))}
           </div>
           <div className="contact-box">
             <h4>Social</h4>

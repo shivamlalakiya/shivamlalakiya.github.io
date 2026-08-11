@@ -8,7 +8,7 @@ const SuspenseFallback = ({ label = "Loading" }: { label?: string }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "#0a0e17",
+        background: "#0d0c0a",
         color: "#fff",
       }}
     >

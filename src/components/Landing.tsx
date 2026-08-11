@@ -42,6 +42,21 @@ const Landing = () => {
             <h3 className="landing-role">
               Data Scientist <span>·</span> Software Developer
             </h3>
+
+            <div className="landing-stats">
+              <div className="landing-stat">
+                <span className="landing-stat-value">5+</span>
+                <span className="landing-stat-label">Years building ML systems</span>
+              </div>
+              <div className="landing-stat">
+                <span className="landing-stat-value">7</span>
+                <span className="landing-stat-label">Peer-reviewed publications</span>
+              </div>
+              <div className="landing-stat">
+                <span className="landing-stat-value">11</span>
+                <span className="landing-stat-label">Merged PRs in open source</span>
+              </div>
+            </div>
           </div>
 
           <div className="landing-photo-wrap">

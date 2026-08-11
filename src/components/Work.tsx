@@ -33,9 +33,18 @@ const Work = () => {
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
-        <h2>
-          My <span>Work</span>
-        </h2>
+        <h3 className="section-eyebrow">
+          <span className="section-index">03</span> Work
+        </h3>
+        <div className="section-hero">
+          <h2 className="section-headline">
+            Selected <span className="about-accent">projects</span>.
+          </h2>
+          <p className="section-subhead">
+            Six projects spanning NLP, time series, data engineering, and
+            full-stack builds — the range behind the résumé bullets.
+          </p>
+        </div>
 
         <div className="carousel-wrapper">
           {/* Navigation Arrows */}
@@ -82,7 +91,13 @@ const Work = () => {
                         </p>
                         <div className="carousel-tools">
                           <span className="tools-label">Tools & Features</span>
-                          <p>{project.tools}</p>
+                          <div className="tool-tags">
+                            {project.tools.split(",").map((tool, i) => (
+                              <span className="tool-tag" key={i}>
+                                {tool.trim()}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                         {"highlights" in project && project.highlights?.length ? (
                           <div className="carousel-tools">

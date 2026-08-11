@@ -1,3 +1,88 @@
+.section-index {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-weight: 500;
+  margin-right: 2px;
+}
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-family: var(--font);
+  text-transform: uppercase;
+  letter-spacing: var(--track-eyebrow);
+  font-weight: 600;
+  color: var(--text-3);
+  margin: 0 0 14px;
+}
+.section-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background: var(--text-3);
+}
+.about-card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  padding: 32px;
+}
+.card-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: var(--track-eyebrow);
+  color: var(--text-3);
+  margin: 0 0 20px;
+}
+.card-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 1px;
+  background: var(--text-3);
+}
+.about-accent {
+  color: var(--accent);
+  font-style: italic;
+}
+.section-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+.section-headline {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(30px, 4.2vw, 54px);
+  line-height: 1.15;
+  letter-spacing: var(--track-tight);
+  color: var(--text);
+  max-width: 900px;
+  margin: 0;
+}
+.section-subhead {
+  max-width: 32ch;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-2);
+  margin: 0;
+  flex-shrink: 0;
+}
+@media only screen and (max-width: 900px) {
+  .section-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
 .hover-link {
   position: relative;
   display: flex;
