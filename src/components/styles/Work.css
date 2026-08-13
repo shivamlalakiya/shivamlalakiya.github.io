@@ -297,6 +297,12 @@
   opacity: 1;
 }
 
+@media (hover: none) {
+  .work-link {
+    opacity: 1;
+  }
+}
+
 .work-image video {
   position: absolute;
   width: 100%;

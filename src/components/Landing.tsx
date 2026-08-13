@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./styles/Landing.css";
 import { profile } from "../data/profile";
+import { mergedPRs } from "../data/opensource";
 import { setHeroScroll, setAllTimeline } from "./utils/GsapScroll";
 
 // Background-removed cutout (transparent WebP) generated from the headshot.
@@ -53,7 +54,7 @@ const Landing = () => {
                 <span className="landing-stat-label">Peer-reviewed publications</span>
               </div>
               <div className="landing-stat">
-                <span className="landing-stat-value">11</span>
+                <span className="landing-stat-value">{mergedPRs.length}</span>
                 <span className="landing-stat-label">Merged PRs in open source</span>
               </div>
             </div>
