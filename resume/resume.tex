@@ -1,0 +1,155 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[document]{ragged2e}
+% MODIFIED: Replaced fullpage and addtolength with the geometry package for cleaner, more reliable margin control.
+\usepackage[left=0.5in, right=0.5in, top=0.45in, bottom=0.45in]{geometry}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage[english]{babel}
+\usepackage[colorlinks=true,
+            linkcolor=red,
+            urlcolor=blue,
+            citecolor=blue,
+            anchorcolor=blue]{hyperref}
+
+%----------FONT OPTIONS----------
+% \usepackage[sfdefault]{FiraSans}
+
+\pagestyle{empty} % MODIFIED: Changed from fancy to empty for a cleaner resume look.
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+% MODIFIED: Reduced top vertical space from -4pt to -6pt to tighten sections.
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+% MODIFIED: Reduced vertical space from -2pt to -3pt to tighten bullet points.
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-3pt}}}}
+
+% MODIFIED: Reduced vertical space from -7pt to -9pt to shrink space after each job/school heading.
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-9pt}
+}
+
+\renewcommand\labelitemi{\textbullet}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet]}
+% MODIFIED: Reduced space from -5pt to -8pt after each list of bullets.
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-8pt}}
+
+%-------------------------
+% DOCUMENT START
+%-------------------------
+\begin{document}
+
+\begin{center}
+    {\huge \textbf{SHIVAM LALAKIYA}} \\ \vspace{1pt}
+    \small
+    \raisebox{-0.1\height}\faPhone\ (781) 363-8482 ~
+    \href{mailto:shivamlalakiya151299@gmail.com}{\faEnvelope\ shivamlalakiya151299@gmail.com} ~
+    \href{https://linkedin.com/in/shivam-lalakiya}{\faLinkedin\ /in/shivam-lalakiya } ~
+    \href{https://github.com/shivamlalakiya}{\faGithub\ /shivamlalakiya}
+    \vspace{-8pt}
+\end{center}
+
+%-----------PROFESSIONAL SUMMARY-----------
+\section{Professional Summary}
+\vspace{-3pt}
+\begin{itemize}[leftmargin=0.15in, noitemsep, topsep=0pt] % MODIFIED: Added options to reduce list spacing
+    \item\small{Data Scientist with \textbf{4+ years} of experience building analytics that reach production and stay there: propensity and forecasting models deployed into live CRM operations, unattended data quality and reporting pipelines serving multiple teams, and LLM applications on secure enterprise infrastructure.
+
+}
+\end{itemize}
+\vspace{-10pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+      {Washington University in St. Louis}{Feb 2024 -- Present}
+      {Data Analyst, Grateful Patient Program}{St. Louis, MO}
+    \resumeItemListStart
+        \resumeItem{Built an internal \textbf{AI analytics assistant} (\textbf{Next.js}, \textbf{LangGraph}, \textbf{MCP}, vector retrieval) on the university's secure AI gateway, indexing live \textbf{Salesforce} data and internal GitHub repositories to answer analytical questions in seconds; shipped from a standing start in \textbf{10 weeks}.}
+        \resumeItem{Developed and productionized donor \textbf{propensity models} achieving a \textbf{66x lift} at the top of the ranked list, deployed into the CRM as interest codes now driving live gift-officer targeting alongside scoring and tiering frameworks adopted across Prospect Management and Research.}
+        \resumeItem{Architected an automated \textbf{data quality pipeline} (\textbf{SQL Server Agent}, \textbf{16} checks across \textbf{11} CRM objects) serving \textbf{4} teams at \textbf{\$0} infrastructure cost, with \textbf{519} runs over \textbf{17} failure-free weeks cutting missing contact preferences \textbf{73\%} and unlinked accounts \textbf{79\%}.}
+        \resumeItem{Engineered \textbf{fuzzy matching} and duplicate-detection engines scanning a \textbf{703K-row} contact table weekly, surfacing \textbf{2,100+} probable duplicate pairs per cycle and unifying external VSE records with the CRM.}
+        \resumeItem{Architected a multi-model cash-flow forecasting suite (\textbf{ARIMA, LSTM, Prophet}) over \textbf{26} fiscal years of actuals with macroeconomic inputs and multi-tier recession stress-testing, delivering \textbf{5-year} projections to Treasury and the \textbf{Board of Trustees}.}
+        \resumeItem{Automated \textbf{8} recurring production reporting systems and \textbf{100+} custom reports across \textbf{50} departments, collapsing a \textbf{4-hour} manual cycle to \textbf{under 5 minutes} with zero manual rebuilds.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+      {Invicro, LLC.}{Sept 2023 -- Feb 2024}
+      {Associate Data Manager}{Boston, MA}
+      \resumeItemListStart
+        \resumeItem{Engineered an automated data pipeline with \textbf{Apache Airflow} for pathological image transfer, reducing processing time by \textbf{20\%} and ensuring on-time delivery for clinical research.}
+        \resumeItem{Deployed \textbf{computer vision} models for pathological image analysis, achieving a \textbf{10\%} improvement in bio-marker identification and contributing to a \textbf{15\%} increase in study sponsors.}
+        \resumeItem{Architected data transformation models in \textbf{dbt}, streamlining workflows and driving a \textbf{25\% reduction} in downstream reporting errors.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Ring Therapeutics}{May 2022 -- Dec 2022}
+      {Data Science Co-op}{Boston, MA}
+      \resumeItemListStart
+        \resumeItem{Leveraged \textbf{NLP} (positional encoding) and \textbf{Graph Neural Networks} to predict gene tropism at a \textbf{0.75 F1-score}, generating vectors for targeted cell therapy delivery.}
+        \resumeItem{Fine-tuned a \textbf{Protein-BERT} model on proprietary Anello sequences, reaching a \textbf{0.8 F1-score} for tropism classification, and automated \textbf{90\%} of data loading via \textbf{Dockerized Airflow} DAGs.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+\vspace{-9pt}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\vspace{-3pt}
+\begin{itemize}[leftmargin=0.15in, noitemsep, topsep=0pt, partopsep=0pt, parsep=0pt]
+    \item[] \small \textbf{Languages:} Python, SQL (T-SQL), R, Shell Scripting, Java, MATLAB
+    \item[] \small \textbf{ML \& AI:} Forecasting (ARIMA, LSTM, Prophet), Propensity Modeling, NLP \& Transformers (BERT), LLM Applications (RAG, LangGraph, MCP, Agents), Computer Vision
+    \item[] \small \textbf{Data Engineering:} ETL, Apache Airflow, dbt, SQL Server Agent, Docker, AWS, Kafka, REST APIs, Git, CI/CD
+    \item[] \small \textbf{Platforms \& BI:} Salesforce, SQL Server, Tableau, Power BI, React/Next.js
+\end{itemize}
+\vspace{-9pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+    \vspace{-3pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Northeastern University, Boston, MA}{Sept 2021 -- July 2023}
+      {Master of Science in Data Analytics Engineering}{GPA: 3.8/4.0}
+
+    \resumeSubheading
+      {Sardar Vallabhbhai National Institute of Technology (NIT Surat), India}{July 2017 -- May 2021}
+      {Bachelor of Technology in Electronics and Communication Engineering}{GPA: 8.1/10}
+
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%-----------OPEN SOURCE-----------
+\section{Open Source}
+\vspace{-3pt}
+\begin{itemize}[leftmargin=0.15in, noitemsep, topsep=0pt, partopsep=0pt, parsep=0pt]
+    \item \small \textbf{\href{https://github.com/PhilanthroPy-Project/PhilanthroPy}{PhilanthroPy}} (author \& maintainer): \textbf{scikit-learn}-style donor analytics library for nonprofit fundraising (donor scoring, lifecycle segmentation, campaign metrics). \textbf{v0.7.0}, \textbf{215} PyPI downloads/mo, \textbf{6} contributors, \textbf{1,933} tests.
+    \item \small \textbf{20 merged pull requests} to \textbf{LlamaIndex} (52K stars), \textbf{sktime} (10K), \textbf{MAPIE}, \textbf{PyMC-Marketing}, and \textbf{TorchCP}, spanning memory backends, vector-store metadata, and conformal prediction.
+\end{itemize}
+\vspace{-9pt}
+
+\end{document}

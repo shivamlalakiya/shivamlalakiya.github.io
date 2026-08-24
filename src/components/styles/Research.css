@@ -148,9 +148,40 @@
   transform: scale(1.06);
 }
 
+/* Counts are small (max 8) — headline numbers, then the repo list. No chart. */
+.oss-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(24px, 4vw, 56px);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.oss-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.oss-stat-value {
+  /* Sans + proportional figures: mono makes a number like 65,569 read loose. */
+  font-size: clamp(26px, 2.6vw, 34px);
+  font-weight: 600;
+  letter-spacing: var(--track-tight);
+  line-height: 1;
+  color: var(--accent);
+}
+
+.oss-stat-label {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
 .oss-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-auto-rows: 1fr;
   gap: 14px;
 }
 
@@ -177,9 +208,8 @@
 }
 
 .oss-card-stats {
-  display: flex;
-  gap: 12px;
   font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
   font-size: 13px;
   color: var(--text-3);
 }

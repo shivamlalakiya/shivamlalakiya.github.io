@@ -28,3 +28,11 @@ dist-ssr
 backup/
 .env
 ._*
+# LaTeX build artifacts
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.pdf
+
+# Salesforce CLI local cache
+.sf/

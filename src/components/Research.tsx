@@ -11,7 +11,10 @@ type View = PublicationType | "All" | typeof OPEN_SOURCE;
 const libraries = Array.from(new Set(mergedPRs.map((pr) => pr.repo))).map((repo) => {
   const prs = mergedPRs.filter((pr) => pr.repo === repo);
   return { repo, stars: prs[0].stars, count: prs.length };
-});
+}).sort((a, b) => b.count - a.count || (b.stars ?? 0) - (a.stars ?? 0));
+
+const latestMerge = mergedPRs.reduce((latest, pr) =>
+  new Date(pr.merged) > new Date(latest) ? pr.merged : latest, mergedPRs[0].merged);
 
 const Research = () => {
   const [active, setActive] = useState<View>("All");
@@ -42,11 +45,19 @@ const Research = () => {
         <h2 className="section-headline">
           Research that made it into <span className="about-accent">production</span>.
         </h2>
-        <p className="section-subhead">
-          {publications.length} publications across AI systems, observability,
-          and fundraising analytics — spanning IEEE conferences and
-          peer-reviewed journals.
-        </p>
+        {active === OPEN_SOURCE ? (
+          <p className="section-subhead">
+            {mergedPRs.length} pull requests merged into {libraries.length}{" "}
+            open-source libraries — conformal prediction, Bayesian marketing mix,
+            time series, and LLM tooling.
+          </p>
+        ) : (
+          <p className="section-subhead">
+            {publications.length} publications across AI systems, observability,
+            and fundraising analytics — spanning IEEE conferences and
+            peer-reviewed journals.
+          </p>
+        )}
       </div>
 
       <div className="research-filters" role="tablist" aria-label="Filter research by type">
@@ -78,6 +89,26 @@ const Research = () => {
 
       {active === OPEN_SOURCE ? (
         <>
+          <div className="oss-stats">
+            <div className="oss-stat">
+              <span className="oss-stat-value">{mergedPRs.length}</span>
+              <span className="oss-stat-label">Merged PRs</span>
+            </div>
+            <div className="oss-stat">
+              <span className="oss-stat-value">{libraries.length}</span>
+              <span className="oss-stat-label">Libraries</span>
+            </div>
+            <div className="oss-stat">
+              <span className="oss-stat-value">
+                {new Date(latestMerge).toLocaleDateString("en-US", {
+                  month: "short",
+                  year: "numeric",
+                })}
+              </span>
+              <span className="oss-stat-label">Latest merge</span>
+            </div>
+          </div>
+
           <div className="oss-grid">
             {libraries.map((lib) => (
               <a
@@ -87,17 +118,17 @@ const Research = () => {
                 target="_blank"
                 rel="noreferrer"
                 data-cursor="disable"
-                aria-label={`View ${lib.repo} on GitHub`}
+                aria-label={`${lib.repo}: ${lib.count} merged pull request${
+                  lib.count > 1 ? "s" : ""
+                }. Open on GitHub`}
               >
                 <span className="research-repo">
                   {lib.repo} <MdArrowOutward />
                 </span>
-                <div className="oss-card-stats">
-                  {lib.stars ? <span>{lib.stars.toLocaleString()}★</span> : null}
-                  <span>
-                    {lib.count} merged PR{lib.count > 1 ? "s" : ""}
-                  </span>
-                </div>
+                <span className="oss-card-stats">
+                  {lib.count} merged
+                  {lib.stars ? ` · ${lib.stars.toLocaleString()}★` : ""}
+                </span>
               </a>
             ))}
           </div>

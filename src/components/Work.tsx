@@ -41,7 +41,7 @@ const Work = () => {
             Selected <span className="about-accent">projects</span>.
           </h2>
           <p className="section-subhead">
-            Six projects spanning NLP, time series, data engineering, and
+            {projects.length} projects spanning NLP, time series, data engineering, and
             full-stack builds — the range behind the résumé bullets.
           </p>
         </div>
