@@ -13,6 +13,17 @@ export type PublicationItem = {
 export const publications: PublicationItem[] = [
   {
     title:
+      "Auxiliary-Table Timing, Not Splitter Choice, Dominates Leakage in Donor Propensity Models: Evidence from Synthetic and Real Fundraising Panels",
+    authors: "S. Lalakiya",
+    venue: "Zenodo",
+    year: 2026,
+    type: "Preprint",
+    description:
+      "Measures where temporal leakage in donor propensity models actually comes from, on a synthetic donor-year panel and a KDD Cup 1998 replication.",
+    link: "https://doi.org/10.5281/zenodo.22665386",
+  },
+  {
+    title:
       "AI for Advancement: Predictive Donor Analytics and Fundraising Intelligence at Scale",
     authors: "S. Lalakiya",
     venue: "IEEE Intl. Conf. on Computing, Engineering and Design",

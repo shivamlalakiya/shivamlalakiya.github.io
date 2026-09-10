@@ -182,7 +182,7 @@ const Research = () => {
                   target="_blank"
                   rel="noreferrer"
                   data-cursor="disable"
-                  aria-label={`Read "${pub.title}" on IEEE Xplore`}
+                  aria-label={`Read "${pub.title}" on ${pub.venue}`}
                 >
                   <MdArrowOutward />
                 </a>
