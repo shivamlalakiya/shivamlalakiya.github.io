@@ -26,14 +26,11 @@ const [current, previous] = experiences;
 const About = () => {
   return (
     <div className="about-section section-container" id="about">
-      <h3 className="section-eyebrow">
-        <span className="section-index">01</span> About
-      </h3>
+      <div className="section-mark"><span>About</span></div>
 
       <div className="section-hero">
         <h2 className="section-headline">
-          Building with a <span className="about-accent">forecaster's</span>{" "}
-          patience and an <span className="about-accent">engineer's</span>{" "}
+          Building with a forecaster's patience and an engineer's
           follow-through.
         </h2>
         <p className="section-subhead">

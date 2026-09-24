@@ -1,14 +1,31 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { TbMoon, TbSun } from "react-icons/tb";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 export let smoother: ScrollSmoother;
 
 const Navbar = () => {
+  const [isDark, setIsDark] = useState(
+    () => document.documentElement.getAttribute("data-theme") === "dark"
+  );
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    setIsDark(next);
+    if (next) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+    }
+  };
+
   useEffect(() => {
     const reduce = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -49,35 +66,45 @@ const Navbar = () => {
           <ul>
             <li>
               <a data-href="#about" href="#about">
-                <HoverLinks text="ABOUT" />
+                <HoverLinks text="About" />
               </a>
             </li>
             <li>
               <a data-href="#career" href="#career">
-                <HoverLinks text="CAREER" />
+                <HoverLinks text="Career" />
               </a>
             </li>
             <li>
               <a data-href="#work" href="#work">
-                <HoverLinks text="WORK" />
+                <HoverLinks text="Work" />
               </a>
             </li>
             <li>
               <a data-href="#research" href="#research">
-                <HoverLinks text="RESEARCH" />
+                <HoverLinks text="Research" />
               </a>
             </li>
             <li>
               <a data-href="#contact" href="#contact">
-                <HoverLinks text="CONTACT" />
+                <HoverLinks text="Contact" />
               </a>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="theme-toggle"
+                onClick={toggleTheme}
+                aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+                aria-pressed={isDark}
+                data-cursor="disable"
+              >
+                {isDark ? <TbSun /> : <TbMoon />}
+              </button>
             </li>
           </ul>
         </nav>
       </div>
 
-      <div className="landing-circle1"></div>
-      <div className="landing-circle2"></div>
       <div className="nav-fade"></div>
     </>
   );

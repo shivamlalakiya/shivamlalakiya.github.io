@@ -5,12 +5,9 @@ const Career = () => {
   return (
     <div className="career-section section-container" id="career">
       <div className="career-container">
-        <h3 className="section-eyebrow">
-          <span className="section-index">02</span> Career
-        </h3>
+        <div className="section-mark"><span>Career</span></div>
         <h2>
-          {experiences.length} roles, <span>one thread</span>
-          <br /> turning data into decisions.
+          {experiences.length} roles, one thread turning data into decisions.
         </h2>
         <div className="career-info">
           <div className="career-timeline">

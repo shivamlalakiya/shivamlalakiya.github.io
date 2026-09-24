@@ -13,6 +13,13 @@
   />
   <link rel="canonical" href="https://shivamlalakiya.github.io/" />
 
+  <!-- Applied before paint so a saved dark preference doesn't flash light first. -->
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  </script>
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shivamlalakiya.github.io/" />

@@ -37,13 +37,11 @@ const Research = () => {
 
   return (
     <div className="research-section section-container" id="research">
-      <h3 className="section-eyebrow">
-        <span className="section-index">04</span> Research
-      </h3>
+      <div className="section-mark"><span>Research</span></div>
 
       <div className="section-hero">
         <h2 className="section-headline">
-          Research that made it into <span className="about-accent">production</span>.
+          Research that made it into production.
         </h2>
         {active === OPEN_SOURCE ? (
           <p className="section-subhead">
@@ -122,9 +120,7 @@ const Research = () => {
                   lib.count > 1 ? "s" : ""
                 }. Open on GitHub`}
               >
-                <span className="research-repo">
-                  {lib.repo} <MdArrowOutward />
-                </span>
+                <span className="research-repo">{lib.repo}</span>
                 <span className="oss-card-stats">
                   {lib.count} merged
                   {lib.stars ? ` · ${lib.stars.toLocaleString()}★` : ""}
@@ -142,7 +138,7 @@ const Research = () => {
               rel="noreferrer"
               data-cursor="disable"
             >
-              {philanthroPy.name} <MdArrowOutward />
+              {philanthroPy.name}
             </a>
             <p>{philanthroPy.description}</p>
             <div className="tool-tags">

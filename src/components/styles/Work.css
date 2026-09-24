@@ -89,11 +89,9 @@
 }
 
 .carousel-tools .tools-label {
+  font-family: var(--font-mono);
   font-size: 12px;
-  font-weight: 600;
   color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: var(--track-eyebrow);
 }
 
 .carousel-tools p {
@@ -139,8 +137,7 @@
   box-sizing: border-box;
   border-radius: var(--r-lg);
   border: 1px solid var(--border);
-  background: radial-gradient(120% 120% at 85% 0%,
-      rgba(232, 147, 90, 0.14), transparent 55%), var(--surface);
+  background: var(--surface);
   color: var(--text);
   overflow: hidden;
   transition: border-color var(--dur) var(--ease),
@@ -148,15 +145,13 @@
 }
 
 .work-card:hover {
-  border-color: rgba(232, 147, 90, 0.4);
+  border-color: var(--accent);
   transform: translateY(-4px);
 }
 
 .work-card-eyebrow {
+  font-family: var(--font-mono);
   font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: var(--track-eyebrow);
   color: var(--accent);
 }
 
@@ -211,8 +206,8 @@
 }
 
 .carousel-arrow:hover {
-  background: rgba(232, 147, 90, 0.12);
-  border-color: rgba(232, 147, 90, 0.5);
+  background: rgba(30, 95, 99, 0.1);
+  border-color: var(--accent);
   color: var(--accentColor);
   transform: translateY(-50%) scale(1.06);
 }
@@ -251,7 +246,7 @@
 
 .carousel-dot:hover {
   border-color: var(--accentColor);
-  background: rgba(232, 147, 90, 0.2);
+  background: rgba(30, 95, 99, 0.2);
 }
 
 .carousel-dot-active {

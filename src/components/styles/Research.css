@@ -70,8 +70,6 @@
 .research-type {
   font-family: var(--font-mono);
   font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: var(--track-eyebrow);
   color: var(--accent);
 }
 
@@ -111,8 +109,6 @@
 .research-venue {
   font-family: var(--font-mono);
   font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: var(--track-normal);
   color: var(--text-3);
   margin: 0 0 12px;
 }

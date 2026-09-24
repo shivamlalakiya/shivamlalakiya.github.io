@@ -37,9 +37,9 @@ const Landing = () => {
           <div className="landing-text">
             <h2 className="landing-eyebrow">Hello! I'm</h2>
             <h1 className="landing-name">
-              {firstName.toUpperCase()}
+              {firstName}
               <br />
-              <span>{lastName.toUpperCase()}</span>
+              <span>{lastName}</span>
             </h1>
             <h3 className="landing-role">
               Data Scientist <span>·</span> Software Developer

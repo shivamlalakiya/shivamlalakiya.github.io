@@ -23,11 +23,10 @@
 }
 
 .contact-flex h4 {
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-weight: 500;
   margin: 0;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: var(--track-eyebrow);
+  font-size: 13px;
   color: var(--text-3);
 }
 

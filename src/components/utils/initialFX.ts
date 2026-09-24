@@ -6,10 +6,17 @@ export function initialFX() {
   document.body.style.overflowY = "auto";
   smoother.paused(false);
   document.getElementsByTagName("main")[0].classList.add("main-active");
+  const bg =
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--bg-deep")
+      .trim() || "#edf0ee";
   gsap.to("body", {
-    backgroundColor: "#0d0c0a",
+    backgroundColor: bg,
     duration: 0.5,
     delay: 1,
+    // Drop the inline style once settled so a later theme toggle (which
+    // changes --bg-deep) still takes effect via the CSS rule underneath.
+    clearProps: "backgroundColor",
   });
 
   // Character reveal on the eyebrow + name.

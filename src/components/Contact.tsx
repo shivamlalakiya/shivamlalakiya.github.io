@@ -1,4 +1,4 @@
-import { MdArrowOutward, MdCopyright } from "react-icons/md";
+import { MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
 import { socialLinks } from "../data/social";
 import { education } from "../data/education";
@@ -7,9 +7,7 @@ const Contact = () => {
   return (
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
-        <h3 className="section-eyebrow">
-          <span className="section-index">05</span> Contact
-        </h3>
+        <div className="section-mark"><span>Contact</span></div>
         <h2 className="contact-title">Let's talk</h2>
         <div className="contact-flex">
           <div className="contact-box">
@@ -21,12 +19,16 @@ const Contact = () => {
                 rel="noreferrer"
                 data-cursor="disable"
               >
-                <strong>LinkedIn</strong> — shivam-lalakiya
+                <strong>LinkedIn</strong>
+                <br />
+                shivam-lalakiya
               </a>
             </p>
             <p>
               <a href={`mailto:${socialLinks.email}`} data-cursor="disable">
-                <strong>Email</strong> — {socialLinks.email}
+                <strong>Email</strong>
+                <br />
+                {socialLinks.email}
               </a>
             </p>
             <p>
@@ -36,7 +38,9 @@ const Contact = () => {
                 rel="noreferrer"
                 data-cursor="disable"
               >
-                <strong>Resume</strong> — PDF
+                <strong>Resume</strong>
+                <br />
+                PDF
               </a>
             </p>
             <h4>Education</h4>
@@ -55,7 +59,7 @@ const Contact = () => {
               data-cursor="disable"
               className="contact-social"
             >
-              GitHub <MdArrowOutward />
+              GitHub
             </a>
             <a
               href={socialLinks.linkedin}
@@ -64,7 +68,7 @@ const Contact = () => {
               data-cursor="disable"
               className="contact-social"
             >
-              LinkedIn <MdArrowOutward />
+              LinkedIn
             </a>
             <a
               href={socialLinks.scholar}
@@ -73,7 +77,7 @@ const Contact = () => {
               data-cursor="disable"
               className="contact-social"
             >
-              Google Scholar <MdArrowOutward />
+              Google Scholar
             </a>
           </div>
           <div className="contact-box">

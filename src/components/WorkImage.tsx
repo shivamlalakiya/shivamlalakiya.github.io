@@ -1,4 +1,3 @@
-import { MdArrowOutward } from "react-icons/md";
 import { FaGithub } from "react-icons/fa6";
 
 interface Props {
@@ -21,9 +20,7 @@ const WorkImage = (props: Props) => {
     >
       <span className="work-card-eyebrow">{props.category}</span>
       <FaGithub className="work-card-glyph" aria-hidden="true" />
-      <span className="work-card-cta">
-        View project <MdArrowOutward aria-hidden="true" />
-      </span>
+      <span className="work-card-cta">View project</span>
     </a>
   );
 };

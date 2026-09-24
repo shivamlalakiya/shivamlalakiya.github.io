@@ -33,12 +33,10 @@ const Work = () => {
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
-        <h3 className="section-eyebrow">
-          <span className="section-index">03</span> Work
-        </h3>
+        <div className="section-mark"><span>Work</span></div>
         <div className="section-hero">
           <h2 className="section-headline">
-            Selected <span className="about-accent">projects</span>.
+            Selected projects.
           </h2>
           <p className="section-subhead">
             {projects.length} projects spanning NLP, time series, data engineering, and

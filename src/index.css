@@ -1,42 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@400..600&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400..500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
 
 :root {
-  /* ── Type ── */
-  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-    "Geist", "Segoe UI", system-ui, sans-serif;
-  --font-serif: "Fraunces", "Iowan Old Style", "Times New Roman", serif;
-  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --track-tighter: -0.033em;
-  --track-tight: -0.021em;
-  --track-normal: -0.01em;
-  --track-eyebrow: 0.14em;
+  /* ── Type ── One serif for reading, one mono for anything measured. ── */
+  --font: "Newsreader", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --track-tighter: -0.02em;
+  --track-tight: -0.012em;
+  --track-normal: 0em;
+  --track-eyebrow: 0.06em;
 
-  /* ── Color ── (--accentColor / --backgroundColor kept: referenced across app + JS) */
-  --accentColor: #e8935a;
-  --backgroundColor: #0d0c0a;
-  --accent: #e8935a;
-  --accent-strong: #f2ab74;
-  --accent-deep: #c8752f;
-  --bg: #0d0c0a;
-  --bg-deep: #080706;
-  --text: #f3efe6;
-  --text-2: #a6a099;
-  --text-3: #85807a;
-  --surface: rgba(243, 239, 230, 0.04);
-  --surface-2: rgba(243, 239, 230, 0.07);
-  --border: rgba(243, 239, 230, 0.09);
-  --border-2: rgba(243, 239, 230, 0.18);
+  /* ── Color ── paper + ink, one signal color for verified numbers. (--accentColor / --backgroundColor kept: referenced across app + JS) */
+  --accentColor: #1e5f63;
+  --backgroundColor: #edf0ee;
+  --accent: #1e5f63;
+  --accent-strong: #2e7a80;
+  --accent-deep: #123f42;
+  --bg: #edf0ee;
+  --bg-deep: #e5e9e6;
+  --text: #14181a;
+  --text-2: #454c4e;
+  --text-3: #7a8285;
+  --surface: rgba(20, 24, 26, 0.035);
+  --surface-2: rgba(20, 24, 26, 0.06);
+  --border: rgba(20, 24, 26, 0.12);
+  --border-2: rgba(20, 24, 26, 0.22);
+  --ink-rgb: 20, 24, 26;
+  --scrim-rgb: 237, 240, 238;
 
-  /* ── Radius ── */
-  --r-sm: 10px;
-  --r-md: 16px;
-  --r-lg: 22px;
+  /* ── Radius ── flat instrument-panel edges; pill kept only for tags/dots. ── */
+  --r-sm: 3px;
+  --r-md: 4px;
+  --r-lg: 6px;
   --r-pill: 980px;
 
-  /* ── Shadow ── */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 12px 34px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.55);
+  /* ── Shadow ── none: borders carry structure, not drop shadows. ── */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
 
   /* ── Motion ── */
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
@@ -49,7 +50,7 @@
   font-style: normal;
   line-height: 1.5;
   scroll-behavior: smooth;
-  color-scheme: light dark;
+  color-scheme: light;
   color: var(--text);
   background-color: var(--backgroundColor);
 
@@ -64,6 +65,28 @@
   --vh: 100svh;
 }
 
+/* ── Dark theme ── same instrument-panel system, ink and paper swapped.
+   Toggled via [data-theme] on <html>; set by ThemeToggle in Navbar. ── */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --accentColor: #4fb8be;
+  --backgroundColor: #12171a;
+  --accent: #4fb8be;
+  --accent-strong: #6fd0d5;
+  --accent-deep: #1e5f63;
+  --bg: #12171a;
+  --bg-deep: #0c1012;
+  --text: #e7ecea;
+  --text-2: #a9b2b1;
+  --text-3: #74807e;
+  --surface: rgba(231, 236, 234, 0.045);
+  --surface-2: rgba(231, 236, 234, 0.07);
+  --border: rgba(231, 236, 234, 0.12);
+  --border-2: rgba(231, 236, 234, 0.22);
+  --ink-rgb: 231, 236, 234;
+  --scrim-rgb: 12, 16, 18;
+}
+
 h1,
 h2,
 h3,
@@ -75,8 +98,8 @@ h6 {
 }
 
 ::selection {
-  background-color: rgba(232, 147, 90, 0.28);
-  color: #ffffff;
+  background-color: rgba(30, 95, 99, 0.18);
+  color: var(--text);
 }
 
 :focus-visible {
@@ -136,13 +159,13 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(var(--ink-rgb), 0.16);
   border-radius: var(--r-pill);
   border: 2px solid transparent;
   background-clip: padding-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(var(--ink-rgb), 0.28);
   background-clip: padding-box;
 }
 
@@ -187,6 +210,7 @@ body {
 
 .techstack h2 {
   font-family: var(--font-serif);
+  font-style: italic;
   font-size: 80px;
   text-align: center;
   position: absolute;
@@ -195,11 +219,7 @@ body {
   left: 0;
   font-weight: 500;
   letter-spacing: var(--track-tight);
-  background: linear-gradient(180deg, #ffffff 30%, rgba(243, 239, 230, 0.55));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--text);
 }
 
 @media screen and (min-width: 768px) {
@@ -218,8 +238,6 @@ body {
   :root {
     scroll-behavior: auto;
   }
-  .landing-circle1,
-  .landing-circle2,
   .career-dot,
   .loaderGame-in,
   .loaderGame-ball,

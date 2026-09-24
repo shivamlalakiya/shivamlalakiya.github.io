@@ -8,8 +8,8 @@ const SuspenseFallback = ({ label = "Loading" }: { label?: string }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "#0d0c0a",
-        color: "#fff",
+        background: "var(--backgroundColor)",
+        color: "var(--text)",
       }}
     >
       <div style={{ textAlign: "center", opacity: 0.9 }}>

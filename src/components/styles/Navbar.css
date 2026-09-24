@@ -13,24 +13,20 @@
   z-index: 9999;
 }
 .header ul {
+  font-family: var(--font-mono);
   font-size: 12px;
   display: flex;
   flex-direction: row;
   margin: 0;
-  padding: 8px 14px;
+  padding: 8px 0;
   list-style: none;
   column-gap: 10px;
   row-gap: 8px;
   align-items: center;
-  border-radius: var(--r-pill);
-  background: rgba(13, 12, 10, 0.55);
-  border: 1px solid var(--border);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
 }
 .header ul li {
   margin-left: 0px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: var(--text-2);
   font-weight: 500;
   cursor: pointer;
@@ -38,6 +34,21 @@
 }
 .header ul li:hover {
   color: var(--text);
+}
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--text-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--dur) var(--ease);
+}
+.theme-toggle:hover {
+  color: var(--accentColor);
 }
 .navbar-connect {
   position: absolute;
