@@ -5,7 +5,6 @@ import Contact from "./Contact";
 import Landing from "./Landing";
 import Navbar from "./Navbar";
 import Research from "./Research";
-import SocialIcons from "./SocialIcons";
 import Work from "./Work";
 
 const TechStack = lazy(() => import("./TechStack"));
@@ -29,7 +28,6 @@ const MainContainer = () => {
   return (
     <div className="container-main">
       <Navbar />
-      <SocialIcons />
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className="container-main">

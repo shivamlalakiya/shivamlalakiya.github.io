@@ -76,6 +76,8 @@ function SphereGeo({
       position={[r(20), r(20) - 25, r(20) - 10]}
       ref={api}
       colliders={false}
+      // Spinning wrapped the logo texture out of view; keep it facing camera.
+      lockRotations
     >
       <BallCollider args={[scale]} />
       <CylinderCollider
@@ -160,9 +162,11 @@ const TechStack = () => {
       (texture) =>
         new THREE.MeshPhysicalMaterial({
           map: texture,
+          // Grey-green tint pulls the saturated logo colors toward the site palette.
+          color: "#b9c4bf",
           emissive: "#ffffff",
           emissiveMap: texture,
-          emissiveIntensity: 0.3,
+          emissiveIntensity: 0.15,
           metalness: 0.5,
           roughness: 1,
           clearcoat: 0.1,
@@ -208,7 +212,7 @@ const TechStack = () => {
           environmentRotation={[0, 4, 2]}
         />
         <EffectComposer enableNormalPass={false}>
-          <N8AO color="#0f002c" aoRadius={2} intensity={1.15} />
+          <N8AO color="#14181a" aoRadius={2} intensity={1.15} />
         </EffectComposer>
       </Canvas>
     </div>

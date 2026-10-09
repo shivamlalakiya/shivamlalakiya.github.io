@@ -4,6 +4,8 @@ import { profile } from "../data/profile";
 import { mergedPRs } from "../data/opensource";
 import { publications } from "../data/publications";
 import { setHeroScroll, setAllTimeline } from "./utils/GsapScroll";
+import { initialFX } from "./utils/initialFX";
+import SocialIcons from "./SocialIcons";
 
 // Background-removed cutout (transparent WebP) generated from the headshot.
 const HERO_PHOTO = "/images/profile.webp";
@@ -15,15 +17,9 @@ const Landing = () => {
   useEffect(() => {
     // No loader anymore: reveal the page on mount and wire up scroll.
     const raf = requestAnimationFrame(() => {
-      import("./utils/initialFX")
-        .then((m) => m.initialFX())
-        .catch(() => {
-          // Safety: never leave the page hidden or scroll-locked.
-          document.body.style.overflowY = "auto";
-          document
-            .getElementsByTagName("main")[0]
-            ?.classList.add("main-active");
-        });
+      // Imported statically: a lazy chunk added a network round-trip
+      // before the page (hidden until main-active) could appear.
+      initialFX();
       setHeroScroll();
       setAllTimeline();
     });
@@ -59,6 +55,8 @@ const Landing = () => {
                 <span className="landing-stat-label">Merged PRs in open source</span>
               </div>
             </div>
+
+            <SocialIcons />
           </div>
 
           <div className="landing-photo-wrap">

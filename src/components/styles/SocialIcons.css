@@ -1,28 +1,22 @@
+/* Links row under the hero stats. Was a fixed rail; it collided with the
+   hero text, the photo and the project carousel arrows. */
 .icons-section {
-  position: fixed;
-  max-width: var(--cMaxWidth);
-  width: var(--cWidth);
-  bottom: 0;
-  z-index: 99;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
 }
 .social-icons {
-  position: absolute;
-  left: -20px;
-  bottom: 20px;
-  display: none;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 999;
-  padding: 10px;
+  display: flex;
+  gap: 4px;
+  margin-left: -10px;
 }
 .social-icons a:hover {
   color: var(--accentColor);
 }
 .social-icons span {
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   position: relative;
   display: flex;
 }
@@ -34,65 +28,33 @@
   top: var(--siTop, 50%);
   transform: translate(-50%, -50%);
   display: flex;
-  font-size: 23px;
+  font-size: 22px;
+  color: var(--text-2);
   will-change: left, top;
   transition: transform 0.3s ease-out;
 }
 .resume-button {
-  position: absolute;
-  z-index: 99;
   display: flex;
-  gap: 5px;
-  bottom: 40px;
-  right: 0;
-  width: auto;
+  align-items: center;
+  gap: 6px;
   text-wrap: nowrap;
-  letter-spacing: 0.2em;
-  font-size: 15px;
-  line-height: 15px;
-  font-weight: 600;
-  color: var(--text-3);
-  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-2);
+  border-left: 1px solid var(--border);
+  padding-left: 24px;
   transition: color var(--dur) var(--ease);
-  transform-origin: left bottom;
-  transform: translateX(100%) rotateZ(-90deg);
 }
 .resume-button:hover {
   color: var(--text);
 }
-div.resume-button span {
-  color: #fff;
-  font-size: 17px;
-  margin-top: -1px;
+.resume-button span {
   display: flex;
-  align-items: center;
+  font-size: 18px;
 }
-.check-line {
-  position: fixed;
-  top: 655px;
-  left: 0;
-  height: 1px;
-  background-color: #ffffff;
-  width: 100%;
-  z-index: 99999;
-}
-@media only screen and (min-width: 900px) {
-  .social-icons {
-    display: flex;
-    gap: 20px;
-  }
-  .social-icons a {
-    font-size: 28px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .resume-button {
-    transform: none;
-    font-size: 20px;
-    line-height: 20px;
-  }
-  div.resume-button span {
-    font-size: 23px;
-    margin-top: -1.5px;
+@media only screen and (max-width: 900px) {
+  .icons-section {
+    justify-content: center;
+    margin-top: 16px;
   }
 }

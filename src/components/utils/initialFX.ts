@@ -29,12 +29,12 @@ export function initialFX() {
     { opacity: 0, y: 80, filter: "blur(5px)" },
     {
       opacity: 1,
-      duration: 1.2,
+      duration: 0.8,
       filter: "blur(0px)",
       ease: "power3.out",
       y: 0,
-      stagger: 0.02,
-      delay: 0.3,
+      stagger: 0.015,
+      delay: 0.1,
     }
   );
 
@@ -45,10 +45,10 @@ export function initialFX() {
     {
       opacity: 1,
       y: 0,
-      duration: 1.2,
+      duration: 0.9,
       ease: "power3.out",
       stagger: 0.12,
-      delay: 0.5,
+      delay: 0.25,
     }
   );
 

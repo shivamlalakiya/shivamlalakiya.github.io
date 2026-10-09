@@ -1,17 +1,12 @@
-import { lazy, Suspense } from "react";
 import "./App.css";
-import SuspenseFallback from "./components/SuspenseFallback";
-
-const MainContainer = lazy(() => import("./components/MainContainer"));
+import MainContainer from "./components/MainContainer";
 import { LoadingProvider } from "./context/LoadingProvider";
 
 const App = () => {
   return (
     <>
       <LoadingProvider>
-        <Suspense fallback={<SuspenseFallback label="Loading site" />}>
-          <MainContainer />
-        </Suspense>
+        <MainContainer />
       </LoadingProvider>
     </>
   );
