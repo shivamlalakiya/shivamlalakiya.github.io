@@ -24,6 +24,17 @@ export const publications: PublicationItem[] = [
   },
   {
     title:
+      "AI-Driven Donor Affinity Forecasting Framework for Data-Driven Fundraising in Healthcare and Academic Institutions",
+    authors: "S. Lalakiya",
+    venue: "Intl. Conf. on Advances in Computer Science, Electrical, Electronics, and Communication Technologies (CE2CT)",
+    year: 2026,
+    type: "Conference",
+    description:
+      "A framework for forecasting donor affinity to guide fundraising in healthcare and academic institutions.",
+    link: "https://ieeexplore.ieee.org/document/11756076",
+  },
+  {
+    title:
       "AI for Advancement: Predictive Donor Analytics and Fundraising Intelligence at Scale",
     authors: "S. Lalakiya",
     venue: "IEEE Intl. Conf. on Computing, Engineering and Design",
@@ -47,7 +58,7 @@ export const publications: PublicationItem[] = [
   {
     title: "AI-Driven Observability for Real-Time Incident Management",
     authors: "P. Verma, S. Lalakiya, R. Bharathan",
-    venue: "Intl. Conf. on Recent Trends in Electrical",
+    venue: "Intl. Conf. on Recent Trends in Electrical, Electronics and Computing Technologies",
     year: 2025,
     type: "Conference",
     description:
@@ -88,15 +99,5 @@ export const publications: PublicationItem[] = [
       "End-to-end donor scoring and campaign optimization for fundraising teams.",
     link:
       "https://www.researchgate.net/publication/399863093_Data-Driven_Fundraising_Intelligence_From_Donor_Scoring_to_Campaign_Optimization",
-  },
-  {
-    title:
-      "Affinity and Wealth Score Prediction Using Multi-Task Learning in Donor Analytics",
-    authors: "S. Lalakiya",
-    venue: "Working paper",
-    year: 2025,
-    type: "Preprint",
-    description:
-      "Multi-task learning for affinity and wealth-score prediction in donor analytics.",
   },
 ];
